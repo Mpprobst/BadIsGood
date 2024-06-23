@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ore5vfbn6s6h"]
+
+[ext_resource type="StyleBox" uid="uid://cny86fd52f6al" path="res://black_9slice.tres" id="1_koaja"]
+[ext_resource type="StyleBox" uid="uid://c3wdvldf27dbs" path="res://white_9slice.tres" id="2_s7d87"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wj53f"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.517647, 0.94902, 0.94902, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 6
+Button/styles/focus = SubResource("StyleBoxEmpty_wj53f")
+Button/styles/hover = ExtResource("2_s7d87")
+Button/styles/normal = ExtResource("1_koaja")
+Button/styles/pressed = ExtResource("1_koaja")
+Label/font_sizes/font_size = 6

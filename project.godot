@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="BadGame"
-run/main_scene="res://BadGame.tscn"
+run/main_scene="res://start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Events="*res://Events.gd"
+LevelTransition="*res://level_transition.tscn"
 
 [display]
 
@@ -26,6 +31,17 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="BadGame"
+
+[gui]
+
+theme/custom="res://Default_theme.tres"
+theme/custom_font="res://pixel_font.ttf"
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Hazards"
 
 [rendering]
 
