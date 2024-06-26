@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://ore5vfbn6s6h"]
 
-[ext_resource type="StyleBox" uid="uid://cny86fd52f6al" path="res://black_9slice.tres" id="1_koaja"]
-[ext_resource type="StyleBox" uid="uid://c3wdvldf27dbs" path="res://white_9slice.tres" id="2_s7d87"]
+[ext_resource type="StyleBox" uid="uid://cny86fd52f6al" path="res://Data/black_9slice.tres" id="1_koaja"]
+[ext_resource type="StyleBox" uid="uid://c3wdvldf27dbs" path="res://Data/white_9slice.tres" id="2_s7d87"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wj53f"]
 

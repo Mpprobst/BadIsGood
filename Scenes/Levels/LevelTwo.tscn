@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnn47acldwteg"]
+[gd_scene load_steps=8 format=3 uid="uid://cnn47acldwteg"]
 
-[ext_resource type="Script" path="res://BadGame.gd" id="1_lrkof"]
-[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://player.tscn" id="2_beope"]
-[ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://spikes.tscn" id="3_xvmsq"]
-[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://heart.tscn" id="4_bhnji"]
-[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://level_completed.tscn" id="5_3kfg5"]
-[ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://level_tile_map.tscn" id="6_1y080"]
+[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_lrkof"]
+[ext_resource type="PackedScene" uid="uid://dvcrf24afx50f" path="res://Scenes/UI/start_menu.tscn" id="2_7nih4"]
+[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="2_beope"]
+[ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="3_xvmsq"]
+[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="4_bhnji"]
+[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="5_4lb2a"]
+[ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://Scenes/level_tile_map.tscn" id="6_1y080"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_lrkof")
+next_level = ExtResource("2_7nih4")
 
 [node name="Player" parent="." instance=ExtResource("2_beope")]
 position = Vector2(32, 96)
@@ -42,7 +44,7 @@ position = Vector2(280, 80)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_3kfg5")]
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_4lb2a")]
 visible = false
 
 [node name="LevelTileMap" parent="." instance=ExtResource("6_1y080")]

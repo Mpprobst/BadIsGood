@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2k3dfhg30vdi"]
 
-[ext_resource type="PackedScene" uid="uid://68qab6hdfa8y" path="res://BadGame.tscn" id="1_papnd"]
-[ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://spikes.tscn" id="2_4iqux"]
-[ext_resource type="PackedScene" uid="uid://cnn47acldwteg" path="res://LevelTwo.tscn" id="2_l21jv"]
-[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://heart.tscn" id="3_lm7ab"]
+[ext_resource type="PackedScene" uid="uid://68qab6hdfa8y" path="res://Scenes/Levels/BadGame.tscn" id="1_papnd"]
+[ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="2_4iqux"]
+[ext_resource type="PackedScene" uid="uid://cnn47acldwteg" path="res://Scenes/Levels/LevelTwo.tscn" id="2_l21jv"]
+[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="3_lm7ab"]
 
 [node name="LevelOne" instance=ExtResource("1_papnd")]
 next_level = ExtResource("2_l21jv")

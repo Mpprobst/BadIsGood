@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cw6yn515iwnff"]
 
-[ext_resource type="Texture2D" uid="uid://ca8tpva8hgsag" path="res://tileset.png" id="1_mniy6"]
-[ext_resource type="Texture2D" uid="uid://cxhswsqyj4asn" path="res://slopes.png" id="2_p146t"]
-[ext_resource type="Texture2D" uid="uid://dhsyx4mggp1bf" path="res://slopes_flipped.png" id="3_84qqk"]
+[ext_resource type="Texture2D" uid="uid://ca8tpva8hgsag" path="res://Sprites/tileset.png" id="1_mniy6"]
+[ext_resource type="Texture2D" uid="uid://cxhswsqyj4asn" path="res://Sprites/slopes.png" id="2_p146t"]
+[ext_resource type="Texture2D" uid="uid://dhsyx4mggp1bf" path="res://Sprites/slopes_flipped.png" id="3_84qqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjs78"]
 resource_name = "autotile"

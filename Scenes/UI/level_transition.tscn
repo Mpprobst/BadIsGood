@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://2pt8mgg842tc"]
 
-[ext_resource type="Script" path="res://level_transition.gd" id="1_tmrrm"]
+[ext_resource type="Script" path="res://Scripts/level_transition.gd" id="1_s2hdl"]
 
 [sub_resource type="Animation" id="Animation_3fn2l"]
 resource_name = "Fade_from_black"
@@ -59,7 +59,7 @@ _data = {
 [node name="LevelTransition" type="CanvasLayer"]
 process_mode = 3
 layer = 10
-script = ExtResource("1_tmrrm")
+script = ExtResource("1_s2hdl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

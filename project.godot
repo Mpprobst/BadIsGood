@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="BadGame"
-run/main_scene="res://start_menu.tscn"
+run/main_scene="res://Scenes/UI/start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
-Events="*res://Events.gd"
-LevelTransition="*res://level_transition.tscn"
+Events="*res://Scripts/Events.gd"
+LevelTransition="*res://Scenes/UI/level_transition.tscn"
 
 [display]
 
@@ -34,7 +34,7 @@ project/assembly_name="BadGame"
 
 [gui]
 
-theme/custom="res://Default_theme.tres"
+theme/custom="res://Data/Default_theme.tres"
 theme/custom_font="res://pixel_font.ttf"
 
 [layer_names]

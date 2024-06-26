@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://68qab6hdfa8y"]
+
+[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_wwddt"]
+[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="2_cf2ma"]
+[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="3_tpqqo"]
+[ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://Scenes/level_tile_map.tscn" id="4_f1p3w"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_wwddt")
+
+[node name="Player" parent="." instance=ExtResource("2_cf2ma")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("3_tpqqo")]
+visible = false
+
+[node name="LevelTileMap" parent="." instance=ExtResource("4_f1p3w")]

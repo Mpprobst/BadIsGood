@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3q1chnol5521"
-path="res://.godot/imported/white_9slice.png-942cf30b898668fe48c41258ecdf264a.ctex"
+uid="uid://cknxse3s15t16"
+path="res://.godot/imported/spikes.png-1e39ba846b6c2b2af0495d59400829b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://white_9slice.png"
-dest_files=["res://.godot/imported/white_9slice.png-942cf30b898668fe48c41258ecdf264a.ctex"]
+source_file="res://Sprites/spikes.png"
+dest_files=["res://.godot/imported/spikes.png-1e39ba846b6c2b2af0495d59400829b8.ctex"]
 
 [params]
 
