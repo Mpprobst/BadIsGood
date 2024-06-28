@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0fnucn80w50q"]
+
+[ext_resource type="Texture2D" uid="uid://dstsdhmp7hou0" path="res://Sprites/player.png" id="1_y7i6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyfnt"]
+size = Vector2(6, 15)
+
+[node name="Corpse" type="StaticBody2D"]
+rotation = 1.5708
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.81502, 3.58574e-06, 7.70092e-07, 1)
+texture = ExtResource("1_y7i6u")
+region_enabled = true
+region_rect = Rect2(0, 0, 20, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oyfnt")

@@ -1,3 +1,5 @@
+class_name PlayerController
+
 extends CharacterBody2D
 
 @export var movement_data : PlayerMovementData
@@ -10,6 +12,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
+
+@export var corpse_scene : PackedScene
+
+signal player_died
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -89,5 +95,7 @@ func update_animations(input_axis):
 
 
 func _on_hazard_detector_area_entered(area):
+	player_died.emit(position)
 	global_position = starting_position
+
 	#queue_free() This code here destroys player.

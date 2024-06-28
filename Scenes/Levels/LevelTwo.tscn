@@ -1,16 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnn47acldwteg"]
+[gd_scene load_steps=9 format=3 uid="uid://cnn47acldwteg"]
 
 [ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_lrkof"]
 [ext_resource type="PackedScene" uid="uid://dvcrf24afx50f" path="res://Scenes/UI/start_menu.tscn" id="2_7nih4"]
 [ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="2_beope"]
 [ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="3_xvmsq"]
+[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_y8ptl"]
 [ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="4_bhnji"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="5_4lb2a"]
 [ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://Scenes/level_tile_map.tscn" id="6_1y080"]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
 script = ExtResource("1_lrkof")
 next_level = ExtResource("2_7nih4")
+player = NodePath("Player")
+corpse = ExtResource("3_y8ptl")
+corpses = NodePath("Corpses")
+
+[node name="Corpses" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_beope")]
 position = Vector2(32, 96)
