@@ -46,6 +46,9 @@ func reset():
 	# TODO: set the kill key to some random key? small chance players just kill themselves
 
 func _unhandled_key_input(event):
+	if dying or dead:
+		return
+		
 	# this here becuase input detection is paused for a few frames 
 	if not has_moved_left and not input_actions.has("Move_Left"):
 		has_moved_left = true
@@ -72,7 +75,6 @@ func _unhandled_key_input(event):
 		used_buttons.append(event.as_text())
 		
 		# TODO: play sfx like a robot serv
-	
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -187,13 +189,16 @@ func kill():
 		die()
 	move_val = 0
 	dying = true
-	rotation = deg_to_rad(90)
+	rotation = deg_to_rad(90)	# TODO: this based on damage direction
 
 func die():
+	if dead:
+		return
 	print("die")
 	dead = true
-	rotation = deg_to_rad(90)
+	move_val = 0
+	rotation = deg_to_rad(90)	# TODO: this based on if there is a wall in front
 	await get_tree().create_timer(1.0).timeout
-	player_died.emit(global_position)
+	player_died.emit(global_position, rotation)
 	reset()
 	# TODO: bug here where we can start on top of a corpse

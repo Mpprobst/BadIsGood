@@ -4,35 +4,35 @@
 [ext_resource type="Resource" uid="uid://c7odi0apox75e" path="res://Data/DefaultMovementData.tres" id="2_qe2e3"]
 [ext_resource type="Texture2D" uid="uid://dx6ecapmvge53" path="res://Sprites/player for bad game.png" id="3_4a7fm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qcxf0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yltpf"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(0, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mnwyy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0x6i"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(144, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0bm8h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l3cs"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(24, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8li5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys4tu"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(48, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dg3dm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5wp6"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(72, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5nqco"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_06lei"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(96, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnujy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynu1o"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(120, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qfa4k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8kvs"]
 atlas = ExtResource("3_4a7fm")
 region = Rect2(0, 0, 24, 20)
 
@@ -40,7 +40,7 @@ region = Rect2(0, 0, 24, 20)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qcxf0")
+"texture": SubResource("AtlasTexture_yltpf")
 }],
 "loop": true,
 "name": &"Idle",
@@ -48,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mnwyy")
+"texture": SubResource("AtlasTexture_y0x6i")
 }],
 "loop": true,
 "name": &"Jump",
@@ -56,22 +56,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0bm8h")
+"texture": SubResource("AtlasTexture_0l3cs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v8li5")
+"texture": SubResource("AtlasTexture_ys4tu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dg3dm")
+"texture": SubResource("AtlasTexture_o5wp6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5nqco")
+"texture": SubResource("AtlasTexture_06lei")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hnujy")
+"texture": SubResource("AtlasTexture_ynu1o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qfa4k")
+"texture": SubResource("AtlasTexture_c8kvs")
 }],
 "loop": true,
 "name": &"Run",
@@ -79,10 +79,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0iao"]
-size = Vector2(12, 16)
+size = Vector2(8, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6da6y"]
-size = Vector2(10, 14.5)
+size = Vector2(6, 14.5)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5

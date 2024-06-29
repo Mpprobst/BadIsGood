@@ -25,7 +25,8 @@ func show_level_completed():
 	
 	#get_tree().paused = true
 	
-func spawn_corpse(pos):
+func spawn_corpse(pos, rot):
 	var body = corpse.instantiate()
 	corpses.add_child(body)
 	body.position = pos
+	body.rotation = rot
