@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="3_tpqqo"]
 [ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://Scenes/level_tile_map.tscn" id="4_f1p3w"]
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
+[node name="World2" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
 script = ExtResource("1_wwddt")
 player = NodePath("Player")
 corpse = ExtResource("2_bk1oa")

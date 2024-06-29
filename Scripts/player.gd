@@ -8,6 +8,8 @@ extends CharacterBody2D
 
 var air_jump = false
 var just_wall_jumped = false
+var dying = false
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -19,14 +21,23 @@ signal player_died
 
 func _physics_process(delta):
 	apply_gravity(delta)
-	handle_wall_jump()
-	handle_jump()
-	var input_axis = Input.get_axis("ui_left", "ui_right")
-	handle_acceleration(input_axis, delta)
-	handle_air_acceleration(input_axis, delta)
-	apply_friction(input_axis, delta)
-	apply_air_resistance(input_axis, delta)
-	update_animations(input_axis)
+	if Input.is_action_just_pressed("Kill"):
+		kill()
+		
+	if not dying:
+		handle_wall_jump()
+		handle_jump()
+		
+		var input_axis = Input.get_axis("ui_left", "ui_right")
+		handle_acceleration(input_axis, delta)
+		handle_air_acceleration(input_axis, delta)
+		apply_friction(input_axis, delta)
+		apply_air_resistance(input_axis, delta)
+		update_animations(input_axis)
+	elif is_on_floor():
+		die()
+		return
+		
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
@@ -93,9 +104,17 @@ func update_animations(input_axis):
 		animated_sprite_2d.play("Jump")
 		# This overrides other animations if we are in air
 
-
 func _on_hazard_detector_area_entered(area):
-	player_died.emit(position)
-	global_position = starting_position
+	die()
+	
+func kill():
+	rotation = deg_to_rad(90)
+	dying = true
 
-	#queue_free() This code here destroys player.
+func die():
+	player_died.emit(position)
+	await get_tree().create_timer(1.0).timeout
+	dying = false
+	rotation = 0
+	global_position = starting_position
+	# TODO: bug here where we can start on top of a corpse
