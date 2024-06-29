@@ -2,45 +2,45 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ch3uq"]
 [ext_resource type="Resource" uid="uid://c7odi0apox75e" path="res://Data/DefaultMovementData.tres" id="2_qe2e3"]
-[ext_resource type="Texture2D" uid="uid://dstsdhmp7hou0" path="res://Sprites/player.png" id="2_sh6xq"]
+[ext_resource type="Texture2D" uid="uid://dx6ecapmvge53" path="res://Sprites/player for bad game.png" id="3_4a7fm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7e5h"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcxf0"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(0, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_82bot"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnwyy"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(144, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bnya5"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bm8h"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(24, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4enjh"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8li5"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(48, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktmk1"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg3dm"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(72, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7pipa"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nqco"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(96, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wob82"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnujy"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(120, 0, 24, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4sbxl"]
-atlas = ExtResource("2_sh6xq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfa4k"]
+atlas = ExtResource("3_4a7fm")
 region = Rect2(0, 0, 24, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pm00d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k7e5h")
+"texture": SubResource("AtlasTexture_qcxf0")
 }],
 "loop": true,
 "name": &"Idle",
@@ -48,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_82bot")
+"texture": SubResource("AtlasTexture_mnwyy")
 }],
 "loop": true,
 "name": &"Jump",
@@ -56,22 +56,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bnya5")
+"texture": SubResource("AtlasTexture_0bm8h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4enjh")
+"texture": SubResource("AtlasTexture_v8li5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ktmk1")
+"texture": SubResource("AtlasTexture_dg3dm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7pipa")
+"texture": SubResource("AtlasTexture_5nqco")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wob82")
+"texture": SubResource("AtlasTexture_hnujy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4sbxl")
+"texture": SubResource("AtlasTexture_qfa4k")
 }],
 "loop": true,
 "name": &"Run",
@@ -79,10 +79,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0iao"]
-size = Vector2(8, 16)
+size = Vector2(12, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6da6y"]
-size = Vector2(6, 14.5)
+size = Vector2(10, 14.5)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -94,9 +94,7 @@ movement_data = ExtResource("2_qe2e3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_pm00d")
-animation = &"Run"
-frame = 2
-frame_progress = 0.0935276
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
