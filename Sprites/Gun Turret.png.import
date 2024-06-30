@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cknxse3s15t16"
-path="res://.godot/imported/spikes.png-1e39ba846b6c2b2af0495d59400829b8.ctex"
+uid="uid://dq2i8jix3sqdf"
+path="res://.godot/imported/Gun Turret.png-fb51691a92ef7bf19ace9fb761803466.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/spikes.png"
-dest_files=["res://.godot/imported/spikes.png-1e39ba846b6c2b2af0495d59400829b8.ctex"]
+source_file="res://Sprites/Gun Turret.png"
+dest_files=["res://.godot/imported/Gun Turret.png-fb51691a92ef7bf19ace9fb761803466.ctex"]
 
 [params]
 

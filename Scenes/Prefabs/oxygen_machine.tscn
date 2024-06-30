@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://cn8iynyssgedd"]
+
+[ext_resource type="Texture2D" uid="uid://chv2yipgyviow" path="res://Sprites/02 machine V2.png" id="1_l123x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22j5d"]
+atlas = ExtResource("1_l123x")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gccu"]
+atlas = ExtResource("1_l123x")
+region = Rect2(24, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev7i2"]
+atlas = ExtResource("1_l123x")
+region = Rect2(48, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub7eh"]
+atlas = ExtResource("1_l123x")
+region = Rect2(72, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_281q7"]
+atlas = ExtResource("1_l123x")
+region = Rect2(96, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knrf6"]
+atlas = ExtResource("1_l123x")
+region = Rect2(120, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w6kb"]
+atlas = ExtResource("1_l123x")
+region = Rect2(144, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg7jn"]
+atlas = ExtResource("1_l123x")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1cpy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22j5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gccu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev7i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub7eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_281q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knrf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w6kb")
+}],
+"loop": true,
+"name": &"Activation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg7jn")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ebh"]
+size = Vector2(22, 11)
+
+[node name="OxygenMachine" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1cpy6")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_r3ebh")
