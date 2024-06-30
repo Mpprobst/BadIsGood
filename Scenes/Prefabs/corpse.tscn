@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0fnucn80w50q"]
 
-[ext_resource type="Texture2D" uid="uid://dx6ecapmvge53" path="res://Sprites/player for bad game.png" id="1_0filb"]
+[ext_resource type="Texture2D" uid="uid://dx6ecapmvge53" path="res://Sprites/player for bad game.png" id="1_ug38m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyfnt"]
 size = Vector2(6, 15)
@@ -10,8 +10,8 @@ rotation = 1.5708
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(0.81502, 3.58574e-06, 7.70092e-07, 1)
-position = Vector2(-2.035, -10)
-texture = ExtResource("1_0filb")
+position = Vector2(-2.285, -10)
+texture = ExtResource("1_ug38m")
 region_enabled = true
 region_rect = Rect2(0, 0, 20, 20)
 
