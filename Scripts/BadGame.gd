@@ -5,7 +5,6 @@ extends Node2D
 
 @export var player : PlayerController
 @export var corpse : PackedScene
-
 @export var corpses : Node
 
 func _ready():

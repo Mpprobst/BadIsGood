@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnn47acldwteg"]
+[gd_scene load_steps=13 format=3 uid="uid://cnn47acldwteg"]
 
 [ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_lrkof"]
 [ext_resource type="PackedScene" uid="uid://dvcrf24afx50f" path="res://Scenes/UI/start_menu.tscn" id="2_7nih4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://Scenes/level_tile_map.tscn" id="6_1y080"]
 [ext_resource type="PackedScene" uid="uid://vgkqdlbkdhdo" path="res://Scenes/Prefabs/meduim_platform.tscn" id="6_btw8s"]
 [ext_resource type="PackedScene" uid="uid://dwg0k2hb0ipob" path="res://Scenes/Prefabs/small_platform.tscn" id="7_qjvk3"]
+[ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="8_vch8h"]
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
 script = ExtResource("1_lrkof")
@@ -36,6 +37,11 @@ position = Vector2(354, 27)
 
 [node name="Small_Platform" parent="Platforms" instance=ExtResource("7_qjvk3")]
 position = Vector2(274, 68)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Gun Turret" parent="Enemies" instance=ExtResource("8_vch8h")]
+position = Vector2(163, 86)
 
 [node name="Player" parent="." instance=ExtResource("2_beope")]
 position = Vector2(32, 96)
