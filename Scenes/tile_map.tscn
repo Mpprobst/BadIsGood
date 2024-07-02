@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw6yn515iwnff"]
+[gd_scene load_steps=4 format=3 uid="uid://c751hv12g83og"]
 
-[ext_resource type="Texture2D" uid="uid://b2pm4rm3xf1lt" path="res://Sprites/Sci fi.png" id="1_deeay"]
-[ext_resource type="Texture2D" uid="uid://drcinmcupdwfy" path="res://Sprites/slopes.png" id="2_p146t"]
-[ext_resource type="Texture2D" uid="uid://dhsyx4mggp1bf" path="res://Sprites/slopes_flipped.png" id="3_84qqk"]
+[ext_resource type="Texture2D" uid="uid://cglxqgqie2wu2" path="res://Sprites/Snow.png" id="1_h3kna"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjs78"]
-resource_name = "autotile"
-texture = ExtResource("1_deeay")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n1ru"]
+texture = ExtResource("1_h3kna")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -478,81 +475,13 @@ texture = ExtResource("1_deeay")
 8:4/0/terrains_peering_bit/left_side = 0
 8:4/0/terrains_peering_bit/top_side = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ua32n"]
-texture = ExtResource("2_p146t")
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -0.198425, 8, 8, -8, 8)
-4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, 0)
-5:0/0 = 0
-5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:0/0 = 0
-6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-6:0/0/physics_layer_0/angular_velocity = 0.0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kcel"]
-texture = ExtResource("3_84qqk")
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 0, 8, 8, -8, 8)
-3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 8, -8, 8)
-4:0/0 = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:0/0 = 0
-5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:0/0 = 0
-6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-6:0/0/physics_layer_0/angular_velocity = 0.0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_s6rwv"]
+[sub_resource type="TileSet" id="TileSet_4vj2d"]
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Autotile"
-terrain_set_0/terrain_0/color = Color(0.5, 0.5, 0.5, 1)
-sources/0 = SubResource("TileSetAtlasSource_wjs78")
-sources/1 = SubResource("TileSetAtlasSource_ua32n")
-sources/3 = SubResource("TileSetAtlasSource_3kcel")
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_7n1ru")
 
-[node name="LevelTileMap" type="TileMap"]
-tile_set = SubResource("TileSet_s6rwv")
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_4vj2d")
 format = 2
-layer_0/name = "Base"
-layer_1/name = "Slopes"
-layer_1/tile_data = PackedInt32Array()
