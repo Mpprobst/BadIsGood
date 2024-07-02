@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drcinmcupdwfy"
-path="res://.godot/imported/slopes.png-311dc16435b20bada50aaad815315609.ctex"
+uid="uid://b38sgbo283v5d"
+path="res://.godot/imported/Platform.png-8d0b29edcb638cb1473d707a16b0aae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/slopes.png"
-dest_files=["res://.godot/imported/slopes.png-311dc16435b20bada50aaad815315609.ctex"]
+source_file="res://Sprites/Platform.png"
+dest_files=["res://.godot/imported/Platform.png-8d0b29edcb638cb1473d707a16b0aae0.ctex"]
 
 [params]
 
