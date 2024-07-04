@@ -4,13 +4,14 @@ extends CharacterBody2D
 
 @export var movement_data : PlayerMovementData
 
+var firstLife = true
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
 var air_jump = false
 var just_wall_jumped = false
 var dying = false
 var dead = false
-var input_actions = ["Move_Left", "Move_Right", "Jump"]
+var input_actions = []
 var used_buttons = []
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -33,17 +34,23 @@ func reset():
 	dead = false
 	rotation = 0
 	global_position = starting_position
-	input_actions = ["Move_Left", "Move_Right", "Jump"]
-	used_buttons = []
+
 	velocity = Vector2.ZERO
 	move_val = 0
 	has_moved_left = false
 	has_moved_right = false
 	
-	for action in input_actions:
-		InputMap.action_erase_events(action)
+	# this allows scenes to load and preserve input between scenes
+	# Move_Right is required for all levels (jump isn't necessairly)
+	print("first life? %s " % firstLife)
+	print("move input? %d" % len(InputMap.action_get_events("Move_Right")))
+	if not firstLife || len(InputMap.action_get_events("Move_Right")) == 0:
+		input_actions = ["Move_Left", "Move_Right", "Jump"]
+		used_buttons = []
 		
-	# TODO: set the kill key to some random key? small chance players just kill themselves
+		for action in input_actions:
+			InputMap.action_erase_events(action)
+	firstLife = false
 
 func _unhandled_key_input(event):
 	if dying or dead:
