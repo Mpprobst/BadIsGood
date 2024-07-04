@@ -1,16 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://laxvbtnbupi8"]
+[gd_scene load_steps=12 format=3 uid="uid://58t7ytsfx7vb"]
 
-[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_wigjv"]
-[ext_resource type="PackedScene" uid="uid://bfc12ri7ijihc" path="res://Scenes/Levels/TestLevels/test_1.tscn" id="2_ku6cc"]
-[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_tafx8"]
-[ext_resource type="Texture2D" uid="uid://cglxqgqie2wu2" path="res://Sprites/Snow.png" id="4_0tkcw"]
-[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="4_2tqlt"]
-[ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="5_6apb3"]
-[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="5_c6wlm"]
-[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_swfaf"]
+[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_c3tlp"]
+[ext_resource type="PackedScene" uid="uid://dvcrf24afx50f" path="res://Scenes/UI/start_menu.tscn" id="2_b5wv1"]
+[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_5hcft"]
+[ext_resource type="Texture2D" uid="uid://cglxqgqie2wu2" path="res://Sprites/Snow.png" id="4_xasxk"]
+[ext_resource type="PackedScene" uid="uid://vgkqdlbkdhdo" path="res://Scenes/Prefabs/meduim_platform.tscn" id="5_mct4b"]
+[ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="5_segnb"]
+[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_i2ch8"]
+[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="7_410tt"]
+[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="8_5443j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2q8e6"]
-texture = ExtResource("4_0tkcw")
+texture = ExtResource("4_xasxk")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -205,19 +206,73 @@ physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_2q8e6")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
-script = ExtResource("1_wigjv")
-next_level = ExtResource("2_ku6cc")
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
+editor_description = "Moving platforms are going in wild directions for some reason here"
+script = ExtResource("1_c3tlp")
+next_level = ExtResource("2_b5wv1")
 player = NodePath("Player")
-corpse = ExtResource("3_tafx8")
+corpse = ExtResource("3_5hcft")
 corpses = NodePath("Corpses")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ijtwp")
 format = 2
-layer_0/tile_data = PackedInt32Array(-262147, 196608, 0, -196611, 196608, 1, -131075, 196608, 1, -65539, 196608, 1, -3, 196608, 1, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 131070, 65536, 1, 131071, 65536, 1, 65536, 65536, 1, 65537, 65536, 1, 196606, 65536, 1, 131069, 0, 1, 65533, 0, 1, 196605, 0, 1, 196607, 65536, 1, 131072, 65536, 1, 3, 65536, 0, -65532, 0, 1, -131068, 0, 0, -131067, 65536, 0, -131066, 65536, 0, -131065, 65536, 0, -131064, 65536, 0, -131063, 131072, 0, -65526, 65536, 0, -65525, 65536, 0, -65524, 65536, 0, -65523, 65536, 0, -65522, 65536, 0, -65521, 65536, 0, -65520, 65536, 0, -65519, 65536, 0, -131058, 0, 0, -131057, 65536, 0, -131056, 65536, 0, -131055, 65536, 0, -196590, 0, 1, -262126, 0, 1, -327662, 0, 0, -131054, 65536, 1, -65518, 65536, 1, -65531, 65536, 1, -65530, 65536, 1, -65529, 65536, 1, -65528, 65536, 1, -65527, 65536, 1, 4, 65536, 1, 131073, 65536, 1, 131074, 65536, 1, 131075, 65536, 1, 131076, 65536, 1, 131077, 65536, 1, 131078, 65536, 1, 65542, 65536, 1, 6, 65536, 1, 5, 65536, 1, 65541, 65536, 1, 65540, 65536, 1, 65539, 65536, 1, 65538, 65536, 1, 7, 65536, 1, 8, 65536, 1, 9, 65536, 1, 10, 65536, 1, 11, 65536, 1, 12, 65536, 1, 13, 65536, 1, 14, 65536, 1, 15, 65536, 1, 16, 65536, 1, 17, 65536, 1, 18, 65536, 1, -327661, 65536, 0, -327660, 65536, 0, -327659, 65536, 0, -327658, 65536, 0, -262125, 65536, 0, -262124, 65536, 0, -262123, 65536, 0, -262122, 65536, 0, -196586, 65536, 0, -131050, 65536, 0, -196587, 65536, 0, -196588, 65536, 0, -196589, 65536, 0, -131053, 65536, 0, -65517, 65536, 0, 19, 65536, 0, 20, 65536, 0, 21, 65536, 0, -65515, 65536, 0, -131051, 65536, 0, -131052, 65536, 0, -65516, 65536, 0, -65514, 65536, 0, 22, 65536, 0)
+layer_0/tile_data = PackedInt32Array(65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 131070, 65536, 1, 131071, 65536, 1, 65536, 65536, 1, 65537, 65536, 1, 196606, 65536, 1, 131069, 0, 1, 65533, 0, 1, 196605, 0, 1, 196607, 65536, 1, 131072, 65536, 1, 131073, 65536, 1, 131074, 65536, 1, 65538, 65536, 1, 3, 131072, 0, 65539, 131072, 1, 131075, 131072, 1, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 65546, 65536, 0, 65547, 65536, 0, 65548, 65536, 0, 65549, 65536, 0, 65550, 65536, 0, 65551, 65536, 0, 65552, 65536, 0, 65553, 65536, 0, 65554, 65536, 0, 65555, 65536, 0, 65556, 65536, 0, 65557, 65536, 0, 65558, 65536, 0, 65560, 65536, 0, 65559, 65536, 0, 65561, 65536, 0, 65562, 65536, 0, 65563, 65536, 0, 65564, 65536, 0, 65565, 65536, 1, 65566, 65536, 1, 65567, 65536, 1, 65568, 65536, 1, -196604, 65536, 3, -196603, 65536, 3, -196602, 65536, 3, -196601, 131072, 2, -196598, 0, 2, -196597, 65536, 3, -196596, 65536, 3, -196595, 131072, 2, -196592, 0, 2, -196591, 65536, 3, -196590, 65536, 3, -196589, 131072, 2, -196586, 0, 2, -196585, 65536, 3, -196584, 65536, 3, -196583, 131072, 2, -196580, 65536, 1, -196579, 65536, 3, -196578, 65536, 3, -196577, 131072, 2, 33, 0, 1, -65503, 0, 1, -131039, 0, 1, -196575, 0, 1, -262125, 65536, 2, -262126, 65536, 2, -262127, 65536, 2, -262128, 65536, 2, -262122, 65536, 2, -262121, 65536, 2, -262120, 65536, 2, -262119, 65536, 2, -262116, 65536, 2, -262115, 65536, 2, -262114, 65536, 2, -262113, 65536, 2, -262131, 65536, 2, -262132, 65536, 2, -262133, 65536, 2, -262134, 65536, 2, -327670, 65536, 2, -327669, 65536, 2, -327668, 65536, 2, -327667, 65536, 2, -393203, 65536, 2, -393204, 65536, 2, -393205, 65536, 2, -393206, 65536, 2, -458742, 65536, 2, -458741, 65536, 2, -458740, 65536, 2, -458739, 65536, 2, -196576, 196608, 3, -196588, 65536, 1, -196587, 65536, 1, -196600, 65536, 1, -196599, 65536, 1, -327664, 0, 0, -327663, 65536, 1, -327662, 65536, 1, -327661, 131072, 0, -327658, 0, 0, -327657, 65536, 1, -327656, 65536, 1, -327655, 131072, 0, -327652, 0, 0, -327651, 65536, 1, -327650, 65536, 1, -327649, 131072, 0, -393199, 0, 0, -393193, 0, 0, -393187, 0, 0, -393198, 131072, 0, -393192, 131072, 0, -393186, 131072, 0, -458729, 65536, 1, -524265, 65536, 1, -458728, 65536, 1, -524264, 65536, 1, -524266, 65536, 1, -524268, 65536, 1, -524267, 65536, 1, -458727, 65536, 1, -458726, 65536, 1, -458725, 65536, 1, -458724, 65536, 1, -458723, 65536, 1, -524269, 65536, 1, -458733, 0, 1, -393197, 0, 1, -589805, 0, 1, -655341, 0, 1, -720877, 0, 1, -786413, 0, 1, -851949, 0, 1, -589808, 131072, 1, -655344, 131072, 1, -720880, 131072, 1, -786416, 131072, 1, -851952, 131072, 1, -524274, 65536, 2, -524273, 65536, 2, -524272, 65536, 2, -524275, 65536, 1, -524276, 65536, 1, -524277, 65536, 1, -524278, 65536, 1, -917485, 0, 1, -983021, 0, 1, -1048557, 0, 1, -917488, 131072, 1, -983024, 131072, 1, -1048560, 131072, 1, -1048556, 65536, 1, -983020, 65536, 1, -983019, 65536, 1, -983018, 65536, 1, -983017, 65536, 1, -1048554, 65536, 1, -1048555, 65536, 1, -1048553, 65536, 1, -1114096, 131072, 1, -1179632, 131072, 1, -1245168, 131072, 1, -1310704, 131072, 1, -1376240, 131072, 1, -1441776, 131072, 1)
 
 [node name="Platforms" type="Node2D" parent="."]
+
+[node name="Medium_Platform" parent="Platforms" instance=ExtResource("5_mct4b")]
+position = Vector2(81, 6)
+duration = 16
+offset = Vector2(431, 0)
+
+[node name="Medium_Platform6" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(512, 6)
+body = NodePath("../Medium_Platform")
+duration = 16
+offset = Vector2(-431, 0)
+
+[node name="Medium_Platform2" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(144, -38)
+body = NodePath("../Medium_Platform")
+duration = 1
+offset = Vector2(0, -16)
+
+[node name="Medium_Platform3" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(240, -38)
+body = NodePath("../Medium_Platform")
+duration = 12
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform4" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(336, -38)
+body = NodePath("../Medium_Platform")
+duration = 12
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform5" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(432, -38)
+body = NodePath("../Medium_Platform")
+duration = 12
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform7" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(288, -134)
+body = NodePath("../Medium_Platform")
+duration = 12
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform8" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(288, -186)
+body = NodePath("../Medium_Platform")
+duration = 12
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform9" parent="Platforms" node_paths=PackedStringArray("body") instance=ExtResource("5_mct4b")]
+position = Vector2(288, -250)
+body = NodePath("../Medium_Platform")
+duration = 12
+offset = Vector2(0, 0)
 
 [node name="Corpses" type="Node2D" parent="."]
 z_index = 1
@@ -226,36 +281,111 @@ z_index = 1
 z_index = 2
 position = Vector2(391, 181)
 
-[node name="Spikes" parent="Obstacles" instance=ExtResource("5_6apb3")]
-position = Vector2(-231, -197)
+[node name="Spikes" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-326, -165)
 
-[node name="Spikes2" parent="Obstacles" instance=ExtResource("5_6apb3")]
-position = Vector2(-215, -197)
+[node name="Spikes2" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-310, -165)
 
-[node name="Spikes3" parent="Obstacles" instance=ExtResource("5_6apb3")]
-position = Vector2(-199, -197)
+[node name="Spikes3" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-294, -165)
 
-[node name="Spikes4" parent="Obstacles" instance=ExtResource("5_6apb3")]
-position = Vector2(-183, -197)
+[node name="Spikes4" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-278, -165)
 
-[node name="Spikes5" parent="Obstacles" instance=ExtResource("5_6apb3")]
-position = Vector2(-118, -213)
+[node name="Spikes5" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-263, -165)
+
+[node name="Spikes6" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-247, -165)
+
+[node name="Spikes7" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-231, -165)
+
+[node name="Spikes8" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-215, -165)
+
+[node name="Spikes9" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-199, -165)
+
+[node name="Spikes10" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-183, -165)
+
+[node name="Spikes11" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-167, -165)
+
+[node name="Spikes12" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-151, -165)
+
+[node name="Spikes13" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-135, -165)
+
+[node name="Spikes14" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-119, -165)
+
+[node name="Spikes15" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-103, -165)
+
+[node name="Spikes16" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-87, -165)
+
+[node name="Spikes17" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-72, -165)
+
+[node name="Spikes18" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-56, -165)
+
+[node name="Spikes19" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-40, -165)
+
+[node name="Spikes20" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-24, -165)
+
+[node name="Spikes21" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(-8, -165)
+
+[node name="Spikes22" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(8, -165)
+
+[node name="Spikes23" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(24, -165)
+
+[node name="Spikes24" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(40, -165)
+
+[node name="Spikes25" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(56, -165)
+
+[node name="Spikes26" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(73, -165)
+
+[node name="Spikes27" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(89, -165)
+
+[node name="Spikes28" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(105, -165)
+
+[node name="Spikes29" parent="Obstacles" instance=ExtResource("5_segnb")]
+position = Vector2(121, -165)
 
 [node name="Collectables" type="Node2D" parent="."]
 
-[node name="Heart" parent="Collectables" instance=ExtResource("6_swfaf")]
-position = Vector2(114, -39)
+[node name="Heart" parent="Collectables" instance=ExtResource("6_i2ch8")]
+position = Vector2(433, -87)
 
-[node name="Heart2" parent="Collectables" instance=ExtResource("6_swfaf")]
-position = Vector2(327, -87)
+[node name="Heart2" parent="Collectables" instance=ExtResource("6_i2ch8")]
+position = Vector2(288, -110)
+
+[node name="Heart3" parent="Collectables" instance=ExtResource("6_i2ch8")]
+position = Vector2(327, -268)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("4_2tqlt")]
+[node name="Player" parent="." instance=ExtResource("7_410tt")]
 position = Vector2(0, -2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_c6wlm")]
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("8_5443j")]
 visible = false
 color = Color(0, 0, 0, 0.0627451)
