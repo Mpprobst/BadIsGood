@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://qpns4ksgag8k"]
 
 [ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_t8mfu"]
-[ext_resource type="PackedScene" uid="uid://58t7ytsfx7vb" path="res://Scenes/Levels/TestLevels/test_6.tscn" id="2_jicag"]
+[ext_resource type="PackedScene" uid="uid://d7ly3p6ixdil" path="res://Scenes/Levels/TestLevels/test_4.tscn" id="2_sppmu"]
 [ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_xtoqc"]
 [ext_resource type="Texture2D" uid="uid://couryfvmok37r" path="res://Sprites/Snow.png" id="4_0eser"]
 [ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="5_i63q5"]
@@ -207,7 +207,7 @@ sources/0 = SubResource("TileSetAtlasSource_2q8e6")
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
 script = ExtResource("1_t8mfu")
-next_level = ExtResource("2_jicag")
+next_level = ExtResource("2_sppmu")
 player = NodePath("Player")
 corpse = ExtResource("3_xtoqc")
 corpses = NodePath("Corpses")
@@ -240,9 +240,6 @@ position = Vector2(-279, -181)
 
 [node name="Spikes5" parent="Obstacles" instance=ExtResource("5_i63q5")]
 position = Vector2(-263, -181)
-
-[node name="Spikes7" parent="Obstacles" instance=ExtResource("5_i63q5")]
-position = Vector2(-231, -181)
 
 [node name="Spikes8" parent="Obstacles" instance=ExtResource("5_i63q5")]
 position = Vector2(-215, -181)
