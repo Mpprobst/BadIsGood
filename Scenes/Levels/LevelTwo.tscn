@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_y8ptl"]
 [ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="4_bhnji"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="5_4lb2a"]
-[ext_resource type="PackedScene" uid="uid://bd8jk4a161ue3" path="res://Scenes/Prefabs/long_platform.tscn" id="5_qlcmi"]
+[ext_resource type="PackedScene" uid="uid://bd8jk4a161ue3" path="res://Scenes/Prefabs/Platforms_Snow/long_platform.tscn" id="5_j6nx6"]
 [ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://Scenes/level_tile_map.tscn" id="6_1y080"]
-[ext_resource type="PackedScene" uid="uid://vgkqdlbkdhdo" path="res://Scenes/Prefabs/meduim_platform.tscn" id="6_btw8s"]
-[ext_resource type="PackedScene" uid="uid://dwg0k2hb0ipob" path="res://Scenes/Prefabs/small_platform.tscn" id="7_qjvk3"]
+[ext_resource type="PackedScene" uid="uid://vgkqdlbkdhdo" path="res://Scenes/Prefabs/Platforms_Snow/meduim_platform.tscn" id="6_08r6l"]
+[ext_resource type="PackedScene" uid="uid://dwg0k2hb0ipob" path="res://Scenes/Prefabs/Platforms_Snow/small_platform.tscn" id="7_qix11"]
 [ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="8_vch8h"]
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
@@ -29,13 +29,13 @@ layer_1/tile_data = PackedInt32Array(458757, 1, 0, 524292, 1, 0, 393227, 131075,
 [node name="Platforms" type="Node2D" parent="."]
 z_index = 1
 
-[node name="Long_Platform" parent="Platforms" instance=ExtResource("5_qlcmi")]
+[node name="Long_Platform" parent="Platforms" instance=ExtResource("5_j6nx6")]
 position = Vector2(62, 30)
 
-[node name="Medium_Platform" parent="Platforms" instance=ExtResource("6_btw8s")]
+[node name="Medium_Platform" parent="Platforms" instance=ExtResource("6_08r6l")]
 position = Vector2(354, 27)
 
-[node name="Small_Platform" parent="Platforms" instance=ExtResource("7_qjvk3")]
+[node name="Small_Platform" parent="Platforms" instance=ExtResource("7_qix11")]
 position = Vector2(274, 68)
 
 [node name="Enemies" type="Node2D" parent="."]

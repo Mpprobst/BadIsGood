@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvh66y1eevsar"]
 
-[ext_resource type="Texture2D" uid="uid://dpvl2fo80f7dr" path="res://Sprites/spikes for bad game.png" id="1_ydn2b"]
+[ext_resource type="Texture2D" uid="uid://dduohwnfn48ib" path="res://Sprites/spikes for bad game 2.png" id="1_iecau"]
 [ext_resource type="PackedScene" uid="uid://dp0bontc5ddr0" path="res://Scenes/hazard_area.tscn" id="2_oge7s"]
 
 [node name="Spikes" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, -8)
-texture = ExtResource("1_ydn2b")
+texture = ExtResource("1_iecau")
 
 [node name="HazardArea" parent="." instance=ExtResource("2_oge7s")]
 
