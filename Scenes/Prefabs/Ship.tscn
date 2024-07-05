@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://45xq5fuh4h5j"]
+
+[ext_resource type="Texture2D" uid="uid://4fku572pqnuc" path="res://Sprites/Ship.png" id="1_8n42u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xndp"]
+atlas = ExtResource("1_8n42u")
+region = Rect2(0, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdf2q"]
+atlas = ExtResource("1_8n42u")
+region = Rect2(80, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k348b"]
+atlas = ExtResource("1_8n42u")
+region = Rect2(160, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is7wo"]
+atlas = ExtResource("1_8n42u")
+region = Rect2(240, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enu00"]
+atlas = ExtResource("1_8n42u")
+region = Rect2(320, 0, 80, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ousli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xndp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdf2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k348b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is7wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enu00")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ousli")
+frame_progress = 0.221676
