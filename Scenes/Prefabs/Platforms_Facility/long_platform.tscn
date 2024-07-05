@@ -1,19 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd8jk4a161ue3"]
+[gd_scene load_steps=4 format=3 uid="uid://bl30rjjirygrr"]
 
-[ext_resource type="Script" path="res://Scripts/MovingPlatform.gd" id="1_m1d0v"]
-[ext_resource type="Texture2D" uid="uid://doccdcope6xmk" path="res://Sprites/platforms.png" id="2_xnc0h"]
+[ext_resource type="Script" path="res://Scripts/MovingPlatform.gd" id="1_ydb4a"]
+[ext_resource type="Texture2D" uid="uid://doccdcope6xmk" path="res://Sprites/platforms.png" id="2_5iya8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4wl4"]
 size = Vector2(32.1931, 12.9337)
 
-[node name="Long_Platform" type="AnimatableBody2D" node_paths=PackedStringArray("body")]
+[node name="Long_Platform" type="AnimatableBody2D"]
 position = Vector2(75, 61)
-script = ExtResource("1_m1d0v")
-body = NodePath(".")
+script = ExtResource("1_ydb4a")
 offset = Vector2(48, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xnc0h")
+texture = ExtResource("2_5iya8")
 region_enabled = true
 region_rect = Rect2(48, 0, 64, 12)
 
