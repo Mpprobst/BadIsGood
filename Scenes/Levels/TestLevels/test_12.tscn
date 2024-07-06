@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxi7v1lbp8ygv"]
+
+[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_xojuk"]
+[ext_resource type="PackedScene" uid="uid://dvcrf24afx50f" path="res://Scenes/UI/start_menu.tscn" id="2_5yokw"]
+[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_mi3ih"]
+[ext_resource type="TileSet" uid="uid://clqdlyyvioo0a" path="res://scifi_tile_set.tres" id="4_2megn"]
+[ext_resource type="PackedScene" uid="uid://blht3k8hivpxt" path="res://Scenes/Prefabs/Platforms_Facility/meduim_platform.tscn" id="5_uidgx"]
+[ext_resource type="PackedScene" uid="uid://gcrgkdq8ydny" path="res://Scenes/Prefabs/spikes_scifi.tscn" id="6_j7gon"]
+[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="7_wmipt"]
+[ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="8_8c6lo"]
+[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="9_40b4e"]
+[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="10_bp6on"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
+script = ExtResource("1_xojuk")
+next_level = ExtResource("2_5yokw")
+player = NodePath("Player")
+corpse = ExtResource("3_mi3ih")
+corpses = NodePath("Corpses")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_2megn")
+format = 2
+layer_0/tile_data = PackedInt32Array(65534, 65536, 0, 65535, 65536, 0, 0, 131072, 0, 131070, 65536, 1, 131071, 65536, 1, 65536, 131072, 1, 196606, 65536, 2, 131069, 0, 1, 196605, 0, 2, 196607, 65536, 1, 131072, 131072, 1, 65533, 0, 1, -3, 196608, 0, 262143, 0, 1, 327679, 0, 1, 196608, 131072, 1, 262144, 131072, 1, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 262150, 65536, 0, 262151, 65536, 0, 262152, 65536, 0, 262153, 65536, 0, 262155, 65536, 0, 262156, 65536, 0, 262157, 65536, 0, 262158, 65536, 0, 262159, 65536, 0, 262160, 65536, 0, 262154, 65536, 0, -131064, 65536, 2, -131063, 65536, 3, -131062, 131072, 3, 196619, 196608, 0, 196623, 0, 1, 131087, 0, 1, 65551, 0, 1, 15, 0, 1, -65521, 0, 1, -131057, 0, 1, -196593, 0, 1, -262129, 0, 1, -262128, 65536, 1, -262127, 65536, 1, -262126, 65536, 1, -262125, 65536, 1, -262124, 65536, 1, -262123, 65536, 1, -262122, 65536, 1, -327657, 65536, 1, -393193, 65536, 1, -458729, 65536, 1, -524265, 65536, 1, -589801, 65536, 1, -262121, 65536, 1, -262144, 65536, 2, -393216, 65536, 1, -458751, 65536, 1, -458752, 65536, 1, -524288, 65536, 1, -589824, 65536, 1, -262143, 65536, 2, -327678, 65536, 1, -458750, 131072, 1, -524286, 131072, 1, -589822, 131072, 1, -393214, 131072, 1, -655358, 131072, 1, -720894, 131072, 1, -786430, 131072, 1, -327679, 65536, 1, -393215, 65536, 1, -524287, 65536, 1, -589823, 65536, 1, -655360, 65536, 1, -655359, 65536, 1, -720895, 65536, 1, -786431, 65536, 1, -786432, 65536, 1, -720897, 65536, 1, -720898, 65536, 1, -655362, 65536, 1, -655361, 65536, 1, -589825, 65536, 1, -589826, 65536, 1, -524290, 65536, 1, -458754, 65536, 1, -393218, 65536, 1, -327682, 65536, 1, -262146, 65536, 1, -196610, 65536, 2, -196609, 65536, 2, -262145, 65536, 1, -327681, 65536, 1, -393217, 65536, 1, -458753, 65536, 1, -524289, 65536, 1, -720896, 65536, 1, -196611, 65536, 2, -262147, 65536, 1, -327683, 65536, 1, -393219, 65536, 1, -458755, 65536, 1, -524291, 65536, 1, -589827, 65536, 1, -655363, 65536, 1, -720899, 65536, 1, -589812, 0, 2, -589811, 65536, 2, -589810, 65536, 2, -327677, 65536, 0, -327676, 65536, 0, -327675, 65536, 0, -327674, 65536, 0, -327673, 65536, 0, -262136, 131072, 1, -196600, 131072, 1, -262137, 65536, 1, -196601, 0, 1, -131065, 0, 2, -327672, 131072, 0, -262142, 65536, 2, -262141, 65536, 2, -262140, 65536, 2, -262139, 65536, 2, -262138, 65536, 2, -327680, 65536, 1, -327665, 0, 1, -393201, 0, 1, -458737, 0, 1, -524273, 0, 1, -655348, 0, 0, -655347, 65536, 0, -655346, 65536, 0, -655345, 65536, 0, -655344, 65536, 0, -655343, 65536, 0, -655342, 65536, 0, -655341, 65536, 0, -655340, 65536, 0, -655339, 65536, 0, -655338, 65536, 0, -589809, 65536, 1, -589808, 65536, 1, -589807, 65536, 1, -589806, 65536, 1, -589805, 65536, 1, -589804, 65536, 1, -589803, 65536, 1, -589802, 65536, 1, -524266, 65536, 1, -458730, 65536, 1, -393194, 65536, 1, -393195, 65536, 1, -327659, 65536, 1, -327660, 65536, 1, -327661, 65536, 1, -327662, 65536, 1, -327663, 65536, 1, -393199, 65536, 1, -393200, 65536, 1, -458736, 65536, 1, -524272, 65536, 1, -327664, 65536, 1, -393196, 65536, 1, -327658, 65536, 1, -458731, 65536, 1, -524267, 65536, 1, -458735, 65536, 1, -524271, 65536, 1, -458734, 65536, 1, -458733, 65536, 1, -458732, 65536, 1, -393197, 65536, 1, -393198, 65536, 1, -524268, 65536, 1, -524269, 65536, 1, -524270, 65536, 1, -655337, 65536, 0)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Medium_Platform" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(66, 6)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform2" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(121, 34)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform3" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(154, 34)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform4" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(216, 12)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform6" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(65, -127)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform7" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(65, -186)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform9" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(100, -186)
+offset = Vector2(0, 0)
+
+[node name="Corpses" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Obstacles" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(391, 181)
+
+[node name="Spikes" parent="Obstacles" instance=ExtResource("6_j7gon")]
+position = Vector2(-347, -117)
+
+[node name="Spikes2" parent="Obstacles" instance=ExtResource("6_j7gon")]
+position = Vector2(-331, -117)
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Heart" parent="Collectables" instance=ExtResource("7_wmipt")]
+position = Vector2(135, 53)
+
+[node name="Heart2" parent="Collectables" instance=ExtResource("7_wmipt")]
+position = Vector2(297, -175)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Gun Turret" parent="Enemies" instance=ExtResource("8_8c6lo")]
+position = Vector2(30, 54)
+range = 70.0
+fire_rate = null
+shot_speed = null
+
+[node name="Gun Turret2" parent="Enemies" instance=ExtResource("8_8c6lo")]
+position = Vector2(153, -6)
+scale = Vector2(1, -1)
+range = 90.0
+fire_rate = 1.5
+shot_speed = null
+
+[node name="Gun Turret3" parent="Enemies" instance=ExtResource("8_8c6lo")]
+position = Vector2(58, -169)
+rotation = 1.5708
+range = 150.0
+fire_rate = null
+shot_speed = null
+
+[node name="Player" parent="." instance=ExtResource("9_40b4e")]
+position = Vector2(0, -2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("10_bp6on")]
+visible = false
+color = Color(0, 0, 0, 0.0627451)

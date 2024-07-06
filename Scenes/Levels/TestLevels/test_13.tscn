@@ -1,0 +1,166 @@
+[gd_scene load_steps=11 format=3 uid="uid://dbi7o18njxc48"]
+
+[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_slvqo"]
+[ext_resource type="PackedScene" uid="uid://dvcrf24afx50f" path="res://Scenes/UI/start_menu.tscn" id="2_38cdt"]
+[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_3equ6"]
+[ext_resource type="TileSet" uid="uid://clqdlyyvioo0a" path="res://scifi_tile_set.tres" id="4_0ua51"]
+[ext_resource type="PackedScene" uid="uid://blht3k8hivpxt" path="res://Scenes/Prefabs/Platforms_Facility/meduim_platform.tscn" id="5_4o0fw"]
+[ext_resource type="PackedScene" uid="uid://gcrgkdq8ydny" path="res://Scenes/Prefabs/spikes_scifi.tscn" id="6_lek1h"]
+[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_yj38c"]
+[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="7_bwc34"]
+[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="8_d7u62"]
+[ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="8_kfyhi"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
+script = ExtResource("1_slvqo")
+next_level = ExtResource("2_38cdt")
+player = NodePath("Player")
+corpse = ExtResource("3_3equ6")
+corpses = NodePath("Corpses")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_0ua51")
+format = 2
+layer_0/tile_data = PackedInt32Array(65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 131070, 65536, 1, 131071, 65536, 1, 65536, 65536, 1, 65537, 65536, 1, 196606, 65536, 1, 131069, 0, 1, 196605, 0, 1, 196607, 65536, 1, 131072, 65536, 1, 3, 131072, 0, 131073, 65536, 1, 131074, 65536, 1, 131075, 131072, 1, 65539, 131072, 1, 65538, 65536, 1, 65533, 0, 0, -262120, 0, 1, -262119, 65536, 1, -262118, 65536, 1, 131103, 0, 1, 65567, 0, 1, 31, 65536, 0, -196584, 0, 2, -196582, 65536, 1, -196583, 65536, 2, -131046, 0, 2, -131045, 65536, 2, -131044, 65536, 2, 30, 0, 3, 32, 65536, 0, 33, 65536, 0, 65568, 65536, 1, 131104, 65536, 1, 131105, 65536, 1, 65569, 65536, 1, 196611, 65536, 1, 196639, 65536, 1, 196641, 65536, 1, 196640, 65536, 1, -327656, 65536, 1, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 196623, 65536, 0, 196624, 65536, 0, 196625, 65536, 0, 196626, 65536, 0, 196627, 65536, 0, 196628, 65536, 0, 196629, 65536, 0, 196630, 65536, 0, 196631, 65536, 0, 196632, 65536, 0, 196633, 65536, 0, 196634, 65536, 0, 196635, 65536, 0, 196636, 65536, 0, 196637, 65536, 0, 196638, 65536, 0, 131097, 196608, 0, -262147, 65536, 2, -262146, 65536, 2, -262145, 65536, 2, -327680, 65536, 2, -327679, 65536, 2, -327678, 65536, 2, -327677, 65536, 2, -327676, 65536, 2, -327675, 65536, 2, -327674, 65536, 2, -327673, 65536, 2, -327672, 65536, 2, -327671, 65536, 2, -327670, 65536, 2, -327669, 65536, 2, -327668, 65536, 2, -327667, 65536, 2, -327666, 65536, 2, -327665, 65536, 2, -327664, 65536, 2, -327663, 65536, 2, -327662, 65536, 2, -327661, 65536, 2, -327660, 65536, 2, -327659, 65536, 2, -327658, 65536, 2, -327657, 65536, 2)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Medium_Platform" parent="Platforms" instance=ExtResource("5_4o0fw")]
+position = Vector2(82, 5)
+duration = 15
+offset = Vector2(128, 0)
+
+[node name="Medium_Platform3" parent="Platforms" instance=ExtResource("5_4o0fw")]
+position = Vector2(274, 5)
+duration = 12
+offset = Vector2(128, 0)
+
+[node name="Medium_Platform2" parent="Platforms" instance=ExtResource("5_4o0fw")]
+position = Vector2(274, 32)
+duration = 10
+offset = Vector2(-160, 0)
+
+[node name="Medium_Platform5" parent="Platforms" instance=ExtResource("5_4o0fw")]
+position = Vector2(463, 5)
+duration = 8
+offset = Vector2(0, 0)
+
+[node name="Corpses" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Obstacles" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(391, 181)
+
+[node name="Spikes" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-327, -133)
+
+[node name="Spikes2" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-311, -133)
+
+[node name="Spikes3" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-295, -133)
+
+[node name="Spikes4" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-279, -133)
+
+[node name="Spikes5" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-263, -133)
+
+[node name="Spikes6" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-247, -133)
+
+[node name="Spikes7" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-231, -133)
+
+[node name="Spikes8" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-215, -133)
+
+[node name="Spikes9" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-199, -133)
+
+[node name="Spikes10" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-183, -133)
+
+[node name="Spikes11" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-167, -133)
+
+[node name="Spikes12" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-151, -133)
+
+[node name="Spikes13" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-135, -133)
+
+[node name="Spikes14" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-119, -133)
+
+[node name="Spikes15" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-103, -133)
+
+[node name="Spikes16" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-87, -133)
+
+[node name="Spikes17" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-71, -133)
+
+[node name="Spikes18" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-55, -133)
+
+[node name="Spikes19" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-39, -133)
+
+[node name="Spikes20" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-23, -133)
+
+[node name="Spikes21" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(-7, -133)
+
+[node name="Spikes23" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(25, -133)
+
+[node name="Spikes24" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(41, -133)
+
+[node name="Spikes25" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(57, -133)
+
+[node name="Spikes26" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(73, -133)
+
+[node name="Spikes27" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(89, -133)
+
+[node name="Spikes28" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(25, -213)
+rotation = 3.14159
+
+[node name="Spikes29" parent="Obstacles" instance=ExtResource("6_lek1h")]
+position = Vector2(9, -213)
+rotation = 3.14159
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Heart" parent="Collectables" instance=ExtResource("6_yj38c")]
+position = Vector2(510, -9)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Gun Turret" parent="Enemies" instance=ExtResource("8_kfyhi")]
+position = Vector2(152, -54)
+rotation = 3.14159
+range = 150.0
+fire_rate = 2.0
+
+[node name="Gun Turret2" parent="Enemies" instance=ExtResource("8_kfyhi")]
+position = Vector2(386, 38)
+range = 120.0
+fire_rate = 2.0
+
+[node name="Player" parent="." instance=ExtResource("7_bwc34")]
+position = Vector2(0, -2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("8_d7u62")]
+visible = false
+color = Color(0, 0, 0, 0.0627451)

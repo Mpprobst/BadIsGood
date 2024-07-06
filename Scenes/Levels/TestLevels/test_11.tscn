@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcyqo0vgcdqw4"]
+
+[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_0vspv"]
+[ext_resource type="PackedScene" uid="uid://dxi7v1lbp8ygv" path="res://Scenes/Levels/TestLevels/test_12.tscn" id="2_q3q7w"]
+[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_3uuhx"]
+[ext_resource type="TileSet" uid="uid://clqdlyyvioo0a" path="res://scifi_tile_set.tres" id="4_d7feg"]
+[ext_resource type="PackedScene" uid="uid://blht3k8hivpxt" path="res://Scenes/Prefabs/Platforms_Facility/meduim_platform.tscn" id="5_8s1s1"]
+[ext_resource type="PackedScene" uid="uid://gcrgkdq8ydny" path="res://Scenes/Prefabs/spikes_scifi.tscn" id="6_irdem"]
+[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_l6vl1"]
+[ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="7_3wv1f"]
+[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="8_ppu7j"]
+[ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="9_2q76s"]
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
+script = ExtResource("1_0vspv")
+next_level = ExtResource("2_q3q7w")
+player = NodePath("Player")
+corpse = ExtResource("3_3uuhx")
+corpses = NodePath("Corpses")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_d7feg")
+format = 2
+layer_0/tile_data = PackedInt32Array(65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 131070, 65536, 1, 131071, 65536, 1, 65536, 65536, 1, 65537, 65536, 1, 196606, 65536, 1, 131069, 0, 1, 196605, 0, 1, 196607, 65536, 1, 131072, 65536, 1, 3, 65536, 0, 131073, 65536, 1, 131074, 65536, 1, 131075, 65536, 1, 65539, 65536, 1, 65538, 65536, 1, 65533, 0, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 10, 65536, 0, 11, 65536, 0, 12, 65536, 0, 13, 65536, 0, 14, 65536, 0, 15, 65536, 0, 16, 65536, 0, 17, 65536, 0, 18, 65536, 0, 19, 65536, 0, 20, 65536, 0, 21, 65536, 0, 22, 65536, 0, 23, 65536, 0, 24, 65536, 0, 25, 65536, 0, 26, 65536, 0, 27, 65536, 0, -65533, 196608, 0, -65525, 196608, 1, -131061, 196608, 1, -196597, 196608, 1, -262127, 65536, 1, -262126, 65536, 1, -327661, 131072, 0, -262125, 131072, 1, -196589, 131072, 1, -131053, 131072, 1, -65517, 131072, 1, -393200, 196608, 0, -327664, 0, 1, -262128, 0, 1, -196590, 65536, 1, -131054, 0, 1, -65518, 0, 1, -196592, 0, 2, -196591, 65536, 2, -262133, 196608, 0, -327663, 65536, 0, -327662, 65536, 0)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Medium_Platform" parent="Platforms" instance=ExtResource("5_8s1s1")]
+position = Vector2(87, -60)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform3" parent="Platforms" instance=ExtResource("5_8s1s1")]
+position = Vector2(138, -94)
+offset = Vector2(0, 0)
+
+[node name="Medium_Platform2" parent="Platforms" instance=ExtResource("5_8s1s1")]
+position = Vector2(239, -35)
+offset = Vector2(0, 0)
+
+[node name="Corpses" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Obstacles" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(391, 181)
+
+[node name="Spikes" parent="Obstacles" instance=ExtResource("6_irdem")]
+z_index = -1
+position = Vector2(-206, -181)
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Heart" parent="Collectables" instance=ExtResource("6_l6vl1")]
+position = Vector2(96, -9)
+
+[node name="Heart2" parent="Collectables" instance=ExtResource("6_l6vl1")]
+position = Vector2(294, -93)
+
+[node name="Heart3" parent="Collectables" instance=ExtResource("6_l6vl1")]
+position = Vector2(270, -16)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Gun Turret" parent="Enemies" instance=ExtResource("7_3wv1f")]
+position = Vector2(185, -74)
+range = 200.0
+fire_rate = 1.5
+shot_speed = null
+
+[node name="Player" parent="." instance=ExtResource("8_ppu7j")]
+position = Vector2(0, -2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("9_2q76s")]
+visible = false
+color = Color(0, 0, 0, 0.0627451)

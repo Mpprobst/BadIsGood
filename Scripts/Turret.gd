@@ -2,8 +2,9 @@ extends Node2D
 
 @export var range = 24.0
 @export var fire_rate = 1.0
+@export var shot_speed_mod = 1.0
 @export var projectile_scene : PackedScene
-@export var animator : AnimatedSprite2D
+var animator : AnimatedSprite2D
 @export var shot_offset : Vector2
 @export var target_offset : Vector2
 
@@ -20,7 +21,7 @@ func _ready():
 		target = players[0]
 	shot_offset.y *= -1
 	target_offset.y *= -1
-
+	animator = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -54,6 +55,6 @@ func fire():
 	
 	print("pos %s" % global_position)
 	print("offset %s" % launch_pos)
-	projectile.launch(target_pos - launch_pos)
+	projectile.launch(target_pos - launch_pos, shot_speed_mod)
 	projectile.global_position = launch_pos
 

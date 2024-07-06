@@ -13,7 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# when we collide we need to destroy this and damage the player
-	position += dir * speed * delta 
+	global_position += dir * speed * delta 
 
 func _on_body_entered(body):
 	print("projectile hit %s" % body.name)
@@ -26,5 +26,6 @@ func _on_body_entered(body):
 	queue_free()
 
 # hurls this projectile in the given direction
-func launch(direction):
+func launch(direction, modifier):
 	dir = direction.normalized()
+	speed = speed * modifier
