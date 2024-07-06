@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djf0cvalcng1v"
+path="res://.godot/imported/2021-01-23_-_I_Remember_You_-_David_Fesliyan.mp3-18820a8706aa1bca953a29cc3b18dae7.mp3str"
+
+[deps]
+
+source_file="res://Audio library/2021-01-23_-_I_Remember_You_-_David_Fesliyan.mp3"
+dest_files=["res://.godot/imported/2021-01-23_-_I_Remember_You_-_David_Fesliyan.mp3-18820a8706aa1bca953a29cc3b18dae7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk18f2jrcimkp"
+path="res://.godot/imported/Wind Quiet Creaks.mp3-655cadc73103e22ba927f363741f2be8.mp3str"
+
+[deps]
+
+source_file="res://Audio library/Wind Quiet Creaks.mp3"
+dest_files=["res://.godot/imported/Wind Quiet Creaks.mp3-655cadc73103e22ba927f363741f2be8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

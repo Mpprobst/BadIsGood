@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfsby7tsv6pqp"
+path="res://.godot/imported/Desert Howling Wind.mp3-39e0826282afbbd9793bde93fec097d7.mp3str"
+
+[deps]
+
+source_file="res://Audio library/Desert Howling Wind.mp3"
+dest_files=["res://.godot/imported/Desert Howling Wind.mp3-39e0826282afbbd9793bde93fec097d7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

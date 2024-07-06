@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jniasrxwlevc"
+path="res://.godot/imported/Breathing Echo space.mp3-fca3f5f43b0fcbb2e87c346d629c48bd.mp3str"
+
+[deps]
+
+source_file="res://Audio library/Breathing Echo space.mp3"
+dest_files=["res://.godot/imported/Breathing Echo space.mp3-fca3f5f43b0fcbb2e87c346d629c48bd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

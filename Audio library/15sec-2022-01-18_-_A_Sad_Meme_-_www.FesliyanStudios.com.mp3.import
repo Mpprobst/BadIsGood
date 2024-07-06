@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2to5vbm7p2mu"
+path="res://.godot/imported/15sec-2022-01-18_-_A_Sad_Meme_-_www.FesliyanStudios.com.mp3-873818e519dd32253edac6100c3d14c1.mp3str"
+
+[deps]
+
+source_file="res://Audio library/15sec-2022-01-18_-_A_Sad_Meme_-_www.FesliyanStudios.com.mp3"
+dest_files=["res://.godot/imported/15sec-2022-01-18_-_A_Sad_Meme_-_www.FesliyanStudios.com.mp3-873818e519dd32253edac6100c3d14c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

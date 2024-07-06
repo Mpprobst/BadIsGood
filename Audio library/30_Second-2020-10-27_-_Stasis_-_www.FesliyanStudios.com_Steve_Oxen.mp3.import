@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwcd42yxflv18"
+path="res://.godot/imported/30_Second-2020-10-27_-_Stasis_-_www.FesliyanStudios.com_Steve_Oxen.mp3-338272335cc88670342fd5ac38bd121a.mp3str"
+
+[deps]
+
+source_file="res://Audio library/30_Second-2020-10-27_-_Stasis_-_www.FesliyanStudios.com_Steve_Oxen.mp3"
+dest_files=["res://.godot/imported/30_Second-2020-10-27_-_Stasis_-_www.FesliyanStudios.com_Steve_Oxen.mp3-338272335cc88670342fd5ac38bd121a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

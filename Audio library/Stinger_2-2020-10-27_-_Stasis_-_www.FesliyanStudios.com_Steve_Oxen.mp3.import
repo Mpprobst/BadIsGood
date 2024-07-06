@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b31wdgi5s0vn4"
+path="res://.godot/imported/Stinger_2-2020-10-27_-_Stasis_-_www.FesliyanStudios.com_Steve_Oxen.mp3-ff475983a88670fd89c2d07070462f37.mp3str"
+
+[deps]
+
+source_file="res://Audio library/Stinger_2-2020-10-27_-_Stasis_-_www.FesliyanStudios.com_Steve_Oxen.mp3"
+dest_files=["res://.godot/imported/Stinger_2-2020-10-27_-_Stasis_-_www.FesliyanStudios.com_Steve_Oxen.mp3-ff475983a88670fd89c2d07070462f37.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

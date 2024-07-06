@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dec31sc5hefg8"
+path="res://.godot/imported/2020-07-24_-_Torn_-_David_Fesliyan.mp3-f11f097fe7c6022600c41a7aa653d21f.mp3str"
+
+[deps]
+
+source_file="res://Audio library/2020-07-24_-_Torn_-_David_Fesliyan.mp3"
+dest_files=["res://.godot/imported/2020-07-24_-_Torn_-_David_Fesliyan.mp3-f11f097fe7c6022600c41a7aa653d21f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
