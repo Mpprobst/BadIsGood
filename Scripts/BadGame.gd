@@ -35,3 +35,7 @@ func spawn_corpse(pos, rot):
 	body.name = "Corpse %d" % Events.death_ct
 	Events.death_ct += 1
 	print("deaths: %d" % Events.death_ct)
+
+
+func _on_player_player_died():
+	pass # Replace with function body.

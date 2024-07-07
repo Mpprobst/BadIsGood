@@ -26,6 +26,7 @@ func _ready():
 	shot_offset.y *= -1
 	target_offset.y *= -1
 	animator = $AnimatedSprite2D
+	servo_audio.max_distance = floor(range) + 50
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

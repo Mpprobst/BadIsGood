@@ -1,16 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://68qab6hdfa8y"]
+[gd_scene load_steps=7 format=3 uid="uid://68qab6hdfa8y"]
 
 [ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_wwddt"]
 [ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="2_bk1oa"]
 [ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="2_cf2ma"]
+[ext_resource type="Texture2D" uid="uid://4ewvoqc1w5f8" path="res://Sprites/Background 2.png" id="3_jj3y4"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="3_tpqqo"]
 [ext_resource type="PackedScene" uid="uid://cw6yn515iwnff" path="res://Scenes/level_tile_map.tscn" id="4_f1p3w"]
 
-[node name="World2" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
 script = ExtResource("1_wwddt")
 player = NodePath("Player")
 corpse = ExtResource("2_bk1oa")
 corpses = NodePath("Corpses")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.913725, 0.913725, 0.913725, 1)
+position = Vector2(97.66, 67.04)
+scale = Vector2(0.845, 0.845)
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_jj3y4")
 
 [node name="Corpses" type="Node2D" parent="."]
 
@@ -22,3 +35,4 @@ corpses = NodePath("Corpses")
 visible = false
 
 [node name="LevelTileMap" parent="." instance=ExtResource("4_f1p3w")]
+layer_0/tile_data = PackedInt32Array(65532, 0, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 65536, 65536, 1, 65537, 65536, 1, 65538, 65536, 1, 65539, 65536, 1, 65540, 65536, 1, 65541, 327680, 2, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 131072, 0, 131081, 327680, 2, 5, 131072, 0, 4, 65536, 0, 3, 65536, 0, 2, 65536, 0, 1, 65536, 0, 0, 65536, 0, 131070, 65536, 1, 131071, 65536, 1, 131069, 65536, 1, 131068, 393216, 2, 131067, 65536, 0, 131066, 65536, 0, 131065, 65536, 0, 131064, 65536, 0, 131063, 0, 0, 131080, 65536, 1, 131079, 65536, 1, 131078, 65536, 1, 131076, 65536, 1, 131077, 65536, 1, 131075, 65536, 1, 131073, 65536, 1, 131074, 65536, 1, 131072, 65536, 1, 196605, 65536, 1, 196606, 65536, 1, 196607, 65536, 1, 196603, 65536, 1, 196604, 65536, 1, 196601, 65536, 1, 196602, 65536, 1, 196600, 65536, 1, 196598, 65536, 0, 196599, 393216, 2, 196596, 65536, 0, 196597, 65536, 0, 131083, 65536, 0, 131082, 65536, 0, 131085, 65536, 0, 131084, 65536, 0, 131086, 65536, 0, 131087, 65536, 0, 131089, 65536, 0, 131088, 65536, 0, 131090, 65536, 0, 131092, 65536, 0, 131091, 65536, 0, 131093, 65536, 0, 131094, 65536, 0, 131095, 131072, 0, 196595, 65536, 0, 196592, 65536, 0, 196593, 65536, 0, 196594, 65536, 0, 196590, 65536, 0, 196591, 65536, 0, 196589, 393216, 0, 262128, 65536, 2, 262130, 65536, 2, 262129, 65536, 2, 262134, 65536, 2, 262133, 65536, 2, 262132, 65536, 2, 262131, 65536, 2, 262137, 65536, 2, 262136, 65536, 2, 262135, 65536, 2, 262141, 65536, 2, 262140, 65536, 2, 262139, 65536, 2, 262138, 65536, 2, 262143, 65536, 2, 262142, 65536, 2, 196608, 65536, 2, 262126, 65536, 2, 262127, 65536, 2, 196588, 65536, 3, 262125, 0, 2, 196587, 0, 3, 196609, 65536, 2, 196614, 65536, 2, 196613, 65536, 2, 196612, 65536, 2, 196611, 65536, 2, 196610, 65536, 2, 196616, 65536, 2, 196615, 65536, 2, 196622, 65536, 2, 196621, 65536, 2, 196620, 65536, 2, 196619, 65536, 2, 196618, 65536, 2, 196617, 65536, 2, 196629, 65536, 2, 196628, 65536, 2, 196627, 65536, 2, 196626, 65536, 2, 196625, 65536, 2, 196624, 65536, 2, 196623, 65536, 2, 196635, 65536, 3, 196634, 65536, 3, 196633, 65536, 3, 196632, 65536, 3, 196631, 327680, 3, 196630, 65536, 2, 196639, 65536, 3, 196638, 65536, 3, 196637, 65536, 3, 196636, 65536, 3, 196640, 131072, 3)
