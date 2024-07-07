@@ -6,6 +6,7 @@ var body : AnimatableBody2D
 @export var offset = Vector2(0, 300)
 
 @onready var sfx : AudioStreamPlayer2D = $Hover
+@onready var animator : AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,5 +22,12 @@ func _ready():
 
 	if sfx != null:
 		sfx.max_distance = floor(offset.length())
+		
+	if animator != null:
+		animator.play("hover")
+		
+	var sprite_anim = get_node("Node2D/AnimatedSprite2D")
+	if sprite_anim != null:
+		sprite_anim.play("default")
 
 

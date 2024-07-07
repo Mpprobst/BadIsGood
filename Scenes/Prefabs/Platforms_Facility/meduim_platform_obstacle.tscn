@@ -24,3 +24,4 @@ shape = SubResource("RectangleShape2D_n4wl4")
 
 [node name="Hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_nguje")
+volume_db = -5.0

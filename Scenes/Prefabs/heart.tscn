@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ni4p8bwlvxqe"]
+[gd_scene load_steps=9 format=3 uid="uid://ni4p8bwlvxqe"]
 
 [ext_resource type="Script" path="res://Scripts/heart.gd" id="1_ebtxt"]
 [ext_resource type="Texture2D" uid="uid://dv004g41rx3h4" path="res://Sprites/heart.png" id="1_qmhpu"]
@@ -6,6 +6,57 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b4p2"]
 radius = 5.0
+
+[sub_resource type="Animation" id="Animation_srxyf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_v4bbd"]
 resource_name = "pickup"
@@ -60,52 +111,31 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_srxyf"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_dykfd"]
+resource_name = "idle"
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_128xf"]
 _data = {
 "RESET": SubResource("Animation_srxyf"),
+"idle": SubResource("Animation_dykfd"),
 "pickup": SubResource("Animation_v4bbd")
 }
 
 [node name="Heart" type="Area2D" groups=["Hearts"]]
+position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_ebtxt")

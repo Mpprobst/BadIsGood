@@ -148,5 +148,6 @@ sprite_frames = SubResource("SpriteFrames_xjljv")
 
 [node name="Hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xc63o")
+volume_db = -5.0
 autoplay = true
 max_distance = 100.0
