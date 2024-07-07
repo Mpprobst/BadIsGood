@@ -1,17 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds4i1slyfkf1y"]
+[gd_scene load_steps=4 format=3 uid="uid://ds4i1slyfkf1y"]
 
-[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_r6i0n"]
-[ext_resource type="PackedScene" uid="uid://qpns4ksgag8k" path="res://Scenes/Levels/TestLevels/test_3.tscn" id="2_rm4bt"]
-[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_nfeed"]
 [ext_resource type="PackedScene" uid="uid://dwg0k2hb0ipob" path="res://Scenes/Prefabs/Platforms_Snow/small_platform.tscn" id="7_6ubha"]
 [ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="8_jah3o"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="10_2ximt"]
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("corpses")]
-script = ExtResource("1_r6i0n")
-next_level = ExtResource("2_rm4bt")
-corpse = ExtResource("3_nfeed")
-corpses = NodePath("Corpses")
+[node name="Level" type="Node2D"]
 
 [node name="Platforms" type="Node2D" parent="."]
 

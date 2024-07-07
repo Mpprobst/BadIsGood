@@ -1,8 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfc12ri7ijihc"]
+[gd_scene load_steps=8 format=3 uid="uid://bfc12ri7ijihc"]
 
-[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_5ap72"]
-[ext_resource type="PackedScene" uid="uid://cdmsw48o6fm6n" path="res://Scenes/Levels/TestLevels/test_2.5.tscn" id="2_hdvs8"]
-[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_j3j2q"]
 [ext_resource type="Texture2D" uid="uid://couryfvmok37r" path="res://Sprites/Snow.png" id="4_31ejl"]
 [ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="5_whcwx"]
 [ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_qjih7"]
@@ -205,12 +202,7 @@ physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_2q8e6")
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
-script = ExtResource("1_5ap72")
-next_level = ExtResource("2_hdvs8")
-player = NodePath("Player")
-corpse = ExtResource("3_j3j2q")
-corpses = NodePath("Corpses")
+[node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ijtwp")

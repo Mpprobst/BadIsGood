@@ -1,8 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://cp1jnmcbe0ec6"]
+[gd_scene load_steps=7 format=3 uid="uid://cp1jnmcbe0ec6"]
 
-[ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_nx6x5"]
-[ext_resource type="PackedScene" uid="uid://bcyqo0vgcdqw4" path="res://Scenes/Levels/TestLevels/test_11.tscn" id="2_l240x"]
-[ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_uv063"]
 [ext_resource type="TileSet" uid="uid://clqdlyyvioo0a" path="res://scifi_tile_set.tres" id="4_a0o7t"]
 [ext_resource type="PackedScene" uid="uid://blht3k8hivpxt" path="res://Scenes/Prefabs/Platforms_Facility/meduim_platform.tscn" id="5_h4stq"]
 [ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_mpobb"]
@@ -10,12 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="7_ix62k"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="8_8f7lv"]
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
-script = ExtResource("1_nx6x5")
-next_level = ExtResource("2_l240x")
-player = NodePath("Player")
-corpse = ExtResource("3_uv063")
-corpses = NodePath("Corpses")
+[node name="Level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("4_a0o7t")
@@ -49,13 +41,11 @@ position = Vector2(96, -54)
 scale = Vector2(-1, -1)
 range = 100.0
 fire_rate = 3.0
-shot_speed = null
 
 [node name="Gun Turret2" parent="Enemies" instance=ExtResource("7_ix62k")]
 position = Vector2(227, -10)
 range = 100.0
 fire_rate = 2.0
-shot_speed = null
 
 [node name="Player" parent="." instance=ExtResource("7_hwj28")]
 position = Vector2(0, -2)
