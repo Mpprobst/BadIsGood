@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://laxvbtnbupi8"]
+[gd_scene load_steps=27 format=3 uid="uid://laxvbtnbupi8"]
 
 [ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_wigjv"]
+[ext_resource type="PackedScene" uid="uid://cnn47acldwteg" path="res://Scenes/Levels/LevelTwo.tscn" id="2_a70xb"]
 [ext_resource type="PackedScene" uid="uid://c8rxdopynyc6k" path="res://Scenes/Levels/TestLevels/test_1.1.tscn" id="2_m0fog"]
 [ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_tafx8"]
 [ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="4_2tqlt"]
@@ -28,7 +29,7 @@
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
 script = ExtResource("1_wigjv")
-next_level = ExtResource("2_m0fog")
+next_level = ExtResource("2_a70xb")
 player = NodePath("Player")
 corpse = ExtResource("3_tafx8")
 corpses = NodePath("Corpses")
@@ -107,7 +108,6 @@ position = Vector2(391, 181)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_2tqlt")]
-position = Vector2(3139, -101)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -709,6 +709,7 @@ rotation = -4.71323
 [node name="Heart" parent="." instance=ExtResource("6_swfaf")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(-1583.36, 611.122)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 scale = Vector2(0.88, 0.88)

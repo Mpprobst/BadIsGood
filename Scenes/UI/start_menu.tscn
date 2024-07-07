@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvcrf24afx50f"]
+[gd_scene load_steps=4 format=3 uid="uid://dvcrf24afx50f"]
 
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_rewg2"]
+[ext_resource type="PackedScene" uid="uid://45xq5fuh4h5j" path="res://Scenes/Prefabs/Ship.tscn" id="2_4mb0y"]
 [ext_resource type="AudioStream" uid="uid://sbg3xdemgobe" path="res://SFX/Impacts/ship_crash.mp3" id="2_d1ti1"]
 
 [node name="StartMenu" type="CenterContainer"]
@@ -11,8 +12,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rewg2")
 
+[node name="Ship" parent="." instance=ExtResource("2_4mb0y")]
+position = Vector2(60, 91)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+modulate = Color(0.734477, 0.377463, 0.175044, 1)
+layout_mode = 2
+text = "PAREIDOLIA"
 
 [node name="StartGameButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(64, 16)
