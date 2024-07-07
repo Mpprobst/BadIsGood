@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SFXDictionary" load_steps=8 format=3 uid="uid://c3gh2oe10npaw"]
+
+[ext_resource type="AudioStream" uid="uid://dyedmfgvdkcat" path="res://SFX/Impacts/impact_flesh1.mp3" id="1_c48f4"]
+[ext_resource type="AudioStream" uid="uid://ctrqrvehwvgyp" path="res://SFX/Impacts/impact_flesh2.mp3" id="2_gbgk4"]
+[ext_resource type="AudioStream" uid="uid://01kmkj8ebo4g" path="res://SFX/Footsteps/metal_footstep1.mp3" id="3_plya4"]
+[ext_resource type="AudioStream" uid="uid://bwv5h3qf3mgm" path="res://SFX/Footsteps/metal_footstep2.mp3" id="4_0th4u"]
+[ext_resource type="Script" path="res://Scripts/SFXDictionary.gd" id="6_3he8s"]
+[ext_resource type="AudioStream" uid="uid://dey1by0r7ygtk" path="res://SFX/Impacts/metal_impact_small.mp3" id="7_avoq5"]
+[ext_resource type="AudioStream" uid="uid://ceo5g3mf3k5gt" path="res://SFX/Impacts/metal_impact_big.mp3" id="8_7sdww"]
+
+[resource]
+script = ExtResource("6_3he8s")
+footsteps = Array[AudioStream]([ExtResource("3_plya4"), ExtResource("4_0th4u"), ExtResource("7_avoq5")])
+surface_impacts = Array[AudioStream]([ExtResource("7_avoq5"), ExtResource("8_7sdww")])
+flesh_impacts = Array[AudioStream]([ExtResource("1_c48f4"), ExtResource("2_gbgk4")])

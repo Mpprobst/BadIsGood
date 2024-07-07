@@ -19,7 +19,6 @@ config/icon="res://Sprites/icon.svg"
 
 Events="*res://Scripts/Events.gd"
 LevelTransition="*res://Scenes/UI/level_transition.tscn"
-AmbienceSound="*res://Scenes/ambience_sound.tscn"
 Music="*res://Scenes/Music.tscn"
 
 [display]

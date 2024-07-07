@@ -32,3 +32,6 @@ func spawn_corpse(pos, rot):
 	corpses.add_child(body)
 	body.position = pos
 	body.rotation = rot
+	body.name = "Corpse %d" % Events.death_ct
+	Events.death_ct += 1
+	print("deaths: %d" % Events.death_ct)

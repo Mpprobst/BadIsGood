@@ -22,15 +22,16 @@ func _process(delta):
 	global_position += dir * speed * delta 
 
 func _on_body_entered(body):
-	print("projectile hit %s" % body.name)
+	#print("projectile hit %s" % body.name)
 	var impact_audio = get_node("Impact")
 	var game : Game = get_tree().get_root().get_node("Level")
-	print("root %s" % game.name)
 	var impact_effect = game.level_sfx.get_rand_impact()
 	# change hit sfx based on what is hit
 	if body.is_in_group("player"):
 		var player : PlayerController = body
 		player.kill()
+		impact_effect = game.level_sfx.get_rand_flesh()
+	if "Corpse" in body.name:
 		impact_effect = game.level_sfx.get_rand_flesh()
 		
 	# hit effect 

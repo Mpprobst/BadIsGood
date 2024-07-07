@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4wl4"]
 size = Vector2(15.5773, 12.9337)
 
-[node name="Medium_Platform" type="AnimatableBody2D" node_paths=PackedStringArray("body")]
+[node name="Medium_Platform" type="AnimatableBody2D"]
 position = Vector2(75, 61)
 script = ExtResource("1_dygr5")
-body = NodePath(".")
 offset = Vector2(0, 36)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.615686, 0.615686, 1)
 texture = ExtResource("2_1wi6c")
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 12)

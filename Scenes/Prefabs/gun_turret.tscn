@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dh8iq64g1akol"]
+[gd_scene load_steps=21 format=3 uid="uid://dh8iq64g1akol"]
 
 [ext_resource type="Script" path="res://Scripts/Turret.gd" id="1_h0etd"]
 [ext_resource type="Texture2D" uid="uid://dq2i8jix3sqdf" path="res://Sprites/Gun Turret.png" id="1_w7iq8"]
 [ext_resource type="PackedScene" uid="uid://r2gbx5t043kf" path="res://Scenes/Prefabs/projectile.tscn" id="2_6yi8e"]
+[ext_resource type="AudioStream" uid="uid://c3t2cq7tygwub" path="res://SFX/environment/servo_up.wav" id="3_s51un"]
+[ext_resource type="AudioStream" uid="uid://c5shjg8ioc8cm" path="res://SFX/environment/servo_down.wav" id="4_x4cjl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhjea"]
 atlas = ExtResource("1_w7iq8")
@@ -121,7 +123,13 @@ range = 84.0
 projectile_scene = ExtResource("2_6yi8e")
 shot_offset = Vector2(0, 6)
 target_offset = Vector2(0, 6)
+servo_up_clip = ExtResource("3_s51un")
+servo_down_clip = ExtResource("4_x4cjl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3jjer")
 animation = &"Activation"
+
+[node name="Servo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_s51un")
+bus = &"SFX"

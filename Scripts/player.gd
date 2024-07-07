@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var movement_data : PlayerMovementData
 @export var death_sfx : Array[AudioStream]
+@export var jump_sfx : Array[AudioStream]
 var firstLife = true
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
@@ -19,11 +20,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 @onready var reusable_audio : AudioStreamPlayer2D = $ReusableAudio
+@onready var footsteps : AudioStreamPlayer2D = $Footsteps
+@onready var animator : AnimatedSprite2D = $AnimatedSprite2D
 
 var move_val = 0
 var has_moved_left = false
 var has_moved_right = false
 var waiting_for_map = false
+var grounded = true
 
 signal player_died
 
@@ -72,6 +76,8 @@ func _unhandled_key_input(event):
 		InputMap.action_add_event(action, event)
 		# physics_process wont be called here 
 		if action == "Jump":
+			reusable_audio.stream = jump_sfx[0]
+			reusable_audio.play()
 			handle_jump()
 		elif action == "Move_Left":
 			move_val = -1
@@ -85,15 +91,32 @@ func _unhandled_key_input(event):
 		# TODO: play sfx like a robot serv
 
 func _physics_process(delta):
+	
+	# probably could get this elsewhere, but this is safe
+	if is_on_floor() and not grounded:
+		var game : Game = get_tree().get_root().get_node("Level")
+		reusable_audio.stream = game.level_sfx.get_rand_footstep()
+		reusable_audio.play()
+		grounded = true
+	elif not is_on_floor() and grounded:
+		grounded = false
+	
 	apply_gravity(delta)
 	if Input.is_action_just_pressed("Kill"):
 		kill()
+	
+	if not footsteps.is_playing() and (animator.frame == 1 or animator.frame == 4):
+		var game : Game = get_tree().get_root().get_node("Level")
+		footsteps.stream = game.level_sfx.get_rand_footstep()
+		footsteps.play()
 		
 	if not dying and not dead:
 		if Input.is_action_just_pressed("Jump"):
+			reusable_audio.stream = jump_sfx[0]
 			handle_wall_jump()
-			handle_jump()
-		
+			handle_jump() 
+			reusable_audio.play()
+			
 		# if we have moved left or right, left or right is still unmapped, and the move val has gone back to 0,
 		# then we know we are about remap the other shit
 		if (has_moved_left or has_moved_right) and move_val == 0 and (input_actions.has("Move_Left") or input_actions.has("Move_Right")):
@@ -151,10 +174,10 @@ func handle_jump():
 	elif not is_on_floor():
 		if  velocity.y < movement_data.jump_velocity / 2:
 			velocity.y = movement_data.jump_velocity / 2
-			
 		if air_jump and not just_wall_jumped:
 			velocity.y = movement_data.jump_velocity * 0.8
 			air_jump = false
+			reusable_audio.stream = jump_sfx[1]
 
 func handle_acceleration(input_axis, delta):
 	if not is_on_floor(): return
@@ -190,6 +213,9 @@ func update_animations(input_axis):
 
 func _on_hazard_detector_area_entered(area):
 	die()
+	var game : Game = get_tree().get_root().get_node("Level")
+	reusable_audio.stream = game.level_sfx.get_rand_flesh()
+	reusable_audio.play()
 	
 func kill():
 	# this is getting called a bunch
