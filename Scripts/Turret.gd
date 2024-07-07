@@ -55,6 +55,6 @@ func fire():
 	
 	print("pos %s" % global_position)
 	print("offset %s" % launch_pos)
-	projectile.launch(target_pos - launch_pos, shot_speed_mod)
+	projectile.launch(target_pos, shot_speed_mod)
 	projectile.global_position = launch_pos
 

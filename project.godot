@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BadGame"
-run/main_scene="res://Scenes/Levels/TestLevels/test_13.tscn"
+run/main_scene="res://Scenes/UI/start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://Sprites/icon.svg"
 
 Events="*res://Scripts/Events.gd"
 LevelTransition="*res://Scenes/UI/level_transition.tscn"
+AmbienceSound="*res://Scenes/ambience_sound.tscn"
 
 [display]
 

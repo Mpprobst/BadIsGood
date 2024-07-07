@@ -3,7 +3,7 @@ class_name PlayerController
 extends CharacterBody2D
 
 @export var movement_data : PlayerMovementData
-
+@export var death_sfx : Array[AudioStream]
 var firstLife = true
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
@@ -18,6 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
+@onready var reusable_audio : AudioStreamPlayer2D = $ReusableAudio
 
 var move_val = 0
 var has_moved_left = false
@@ -205,6 +206,10 @@ func die():
 	dead = true
 	move_val = 0
 	rotation = deg_to_rad(90)	# TODO: this based on if there is a wall in front
+	await get_tree().create_timer(0.1).timeout
+	var rng = RandomNumberGenerator.new()
+	reusable_audio.stream = death_sfx[rng.randi_range(0, len(death_sfx)-1)]
+	reusable_audio.play()
 	await get_tree().create_timer(1.0).timeout
 	player_died.emit(global_position, rotation)
 	reset()

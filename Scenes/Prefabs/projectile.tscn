@@ -1,9 +1,112 @@
-[gd_scene load_steps=4 format=3 uid="uid://r2gbx5t043kf"]
+[gd_scene load_steps=11 format=3 uid="uid://r2gbx5t043kf"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_l3jyo"]
-[ext_resource type="Texture2D" uid="uid://dv004g41rx3h4" path="res://Sprites/heart.png" id="1_w0qdm"]
+[ext_resource type="Texture2D" uid="uid://bo8skluyguxy2" path="res://Sprites/laser.png" id="2_6bcjn"]
+[ext_resource type="AudioStream" uid="uid://cwkxpvap5mtue" path="res://SFX/environment/laser1.wav" id="2_23haw"]
+[ext_resource type="AudioStream" uid="uid://dym1omhqk5vhg" path="res://SFX/environment/laser2.5.wav" id="3_67quq"]
+[ext_resource type="AudioStream" uid="uid://bytlx87gqdxgh" path="res://SFX/environment/laser2.wav" id="4_2h635"]
+[ext_resource type="AudioStream" uid="uid://dyedmfgvdkcat" path="res://SFX/Impacts/impact_flesh1.mp3" id="4_ugdoy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wrt78"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3kl0"]
+size = Vector2(21.2121, 9.09091)
+
+[sub_resource type="Animation" id="Animation_tn8vk"]
+resource_name = "impact"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Impact:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_oebq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Impact:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4na7v"]
+_data = {
+"RESET": SubResource("Animation_oebq1"),
+"impact": SubResource("Animation_tn8vk")
+}
 
 [node name="Projectile" type="Area2D"]
 z_index = 10
@@ -11,12 +114,29 @@ collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_l3jyo")
 speed = 200.0
+shot_sounds = Array[AudioStream]([ExtResource("2_23haw"), ExtResource("3_67quq"), ExtResource("4_2h635")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_w0qdm")
+position = Vector2(-6, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_6bcjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 0.5)
 scale = Vector2(0.33, 0.33)
-shape = SubResource("CircleShape2D_wrt78")
+shape = SubResource("RectangleShape2D_u3kl0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ShotSound")
+libraries = {
+"": SubResource("AnimationLibrary_4na7v")
+}
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_67quq")
+
+[node name="Impact" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ugdoy")
+volume_db = -5.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

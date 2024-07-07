@@ -117,4 +117,8 @@ collision_mask = 4
 position = Vector2(0, -7.75)
 shape = SubResource("RectangleShape2D_6da6y")
 
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ReusableAudio" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]

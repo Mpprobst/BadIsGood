@@ -1,7 +1,10 @@
+class_name Game
+
 extends Node2D
 
 @export var next_level: PackedScene
 @onready var level_completed = $CanvasLayer/LevelCompleted
+@export var level_sfx : SFXDictionary = preload("res://Resources/snow_sfx.tres")
 
 @export var player : PlayerController
 @export var corpse : PackedScene
