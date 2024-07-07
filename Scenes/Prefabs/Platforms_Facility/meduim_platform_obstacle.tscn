@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuueoywqdfyva"]
+[gd_scene load_steps=5 format=3 uid="uid://cuueoywqdfyva"]
 
 [ext_resource type="Script" path="res://Scripts/MovingPlatform.gd" id="1_tuwbe"]
 [ext_resource type="Texture2D" uid="uid://doccdcope6xmk" path="res://Sprites/platforms.png" id="2_exxe7"]
+[ext_resource type="AudioStream" uid="uid://ds04gakmlayrd" path="res://SFX/environment/hover.mp3" id="3_nguje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4wl4"]
 size = Vector2(15.5773, 12.9337)
@@ -20,3 +21,6 @@ region_rect = Rect2(16, 0, 32, 12)
 position = Vector2(7.62939e-06, 0)
 scale = Vector2(1.92588, 0.773174)
 shape = SubResource("RectangleShape2D_n4wl4")
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nguje")

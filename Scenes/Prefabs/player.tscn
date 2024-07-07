@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1ycb50vkkwio"]
+[gd_scene load_steps=22 format=3 uid="uid://b1ycb50vkkwio"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ch3uq"]
 [ext_resource type="Resource" uid="uid://c7odi0apox75e" path="res://Data/DefaultMovementData.tres" id="2_qe2e3"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bne41goxvec4p" path="res://SFX/environment/player_death4.wav" id="6_db61n"]
 [ext_resource type="AudioStream" uid="uid://ctrmpfmavjmvh" path="res://SFX/Footsteps/jump0.mp3" id="7_v07wa"]
 [ext_resource type="AudioStream" uid="uid://d27e248wgocf4" path="res://SFX/Footsteps/jump1.mp3" id="8_2spab"]
+[ext_resource type="AudioStream" uid="uid://jniasrxwlevc" path="res://Audio library/Breathing Echo space.mp3" id="10_q5twp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hutc"]
 atlas = ExtResource("3_k4tou")
@@ -129,5 +130,10 @@ shape = SubResource("RectangleShape2D_6da6y")
 
 [node name="ReusableAudio" type="AudioStreamPlayer2D" parent="."]
 volume_db = 3.0
+
+[node name="Breathing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_q5twp")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]

@@ -21,6 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var starting_position = global_position
 @onready var reusable_audio : AudioStreamPlayer2D = $ReusableAudio
 @onready var footsteps : AudioStreamPlayer2D = $Footsteps
+@onready var breathing_sfx : AudioStreamPlayer2D = $Breathing
 @onready var animator : AnimatedSprite2D = $AnimatedSprite2D
 
 var move_val = 0
@@ -45,6 +46,7 @@ func reset():
 	has_moved_left = false
 	has_moved_right = false
 	
+	breathing_sfx.play()
 	# this allows scenes to load and preserve input between scenes
 	# Move_Right is required for all levels (jump isn't necessairly)
 	print("first life? %s " % firstLife)
@@ -226,6 +228,7 @@ func kill():
 	rotation = deg_to_rad(90)	# TODO: this based on damage direction
 
 func die():
+	breathing_sfx.stop()
 	if dead:
 		return
 	print("die")

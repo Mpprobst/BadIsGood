@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://blht3k8hivpxt"]
+[gd_scene load_steps=16 format=3 uid="uid://blht3k8hivpxt"]
 
 [ext_resource type="Script" path="res://Scripts/MovingPlatform.gd" id="1_io18i"]
 [ext_resource type="Texture2D" uid="uid://b38sgbo283v5d" path="res://Sprites/Platform.png" id="2_yoxlc"]
+[ext_resource type="AudioStream" uid="uid://ds04gakmlayrd" path="res://SFX/environment/hover.mp3" id="3_xc63o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4wl4"]
 size = Vector2(16.6158, 9.05359)
@@ -144,3 +145,8 @@ libraries = {
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
 sprite_frames = SubResource("SpriteFrames_xjljv")
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xc63o")
+autoplay = true
+max_distance = 100.0

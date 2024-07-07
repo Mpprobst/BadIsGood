@@ -5,6 +5,8 @@ var body : AnimatableBody2D
 @export var duration = 5
 @export var offset = Vector2(0, 300)
 
+@onready var sfx : AudioStreamPlayer2D = $Hover
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	offset.y = -offset.y # its flipped for some reason
@@ -16,5 +18,8 @@ func _ready():
 
 	tween.tween_property(body, "position", end_pos, duration / 2.0)
 	tween.tween_property(body, "position", start_pos, duration / 2.0)
+
+	if sfx != null:
+		sfx.max_distance = floor(offset.length())
 
 
