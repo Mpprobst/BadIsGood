@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://laxvbtnbupi8"]
+[gd_scene load_steps=25 format=3 uid="uid://laxvbtnbupi8"]
 
 [ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_wigjv"]
 [ext_resource type="PackedScene" uid="uid://c8rxdopynyc6k" path="res://Scenes/Levels/TestLevels/test_1.1.tscn" id="2_m0fog"]
@@ -23,8 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://ds4i1slyfkf1y" path="res://Scenes/Levels/TestLevels/test_2.7.tscn" id="20_twoes"]
 [ext_resource type="PackedScene" uid="uid://behhm2t28quj7" path="res://Scenes/Prefabs/Platforms_Snow/meduim_platform_obstacle.tscn" id="21_tep0c"]
 [ext_resource type="PackedScene" uid="uid://vgkqdlbkdhdo" path="res://Scenes/Prefabs/Platforms_Snow/meduim_platform.tscn" id="22_ia0fk"]
-[ext_resource type="PackedScene" uid="uid://bd8jk4a161ue3" path="res://Scenes/Prefabs/Platforms_Snow/long_platform.tscn" id="23_yns2h"]
-[ext_resource type="PackedScene" uid="uid://dwg0k2hb0ipob" path="res://Scenes/Prefabs/Platforms_Snow/small_platform.tscn" id="24_4q8py"]
 [ext_resource type="PackedScene" uid="uid://buat60t1vopp0" path="res://Scenes/Prefabs/Platforms_Snow/small_platform_obstacle.tscn" id="25_p8vik"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("player", "corpses")]
@@ -75,6 +73,22 @@ texture = ExtResource("12_7tlse")
 position = Vector2(4240, -200)
 texture = ExtResource("7_ylbk2")
 
+[node name="DeadPlayerSittingSnow2" type="Sprite2D" parent="."]
+position = Vector2(2792, -152)
+texture = ExtResource("6_b7rsy")
+
+[node name="DeadPlayerLyingTurret2" type="Sprite2D" parent="."]
+position = Vector2(3303, -104)
+texture = ExtResource("8_2eyen")
+
+[node name="DeadPlayerSittingAlt2" type="Sprite2D" parent="."]
+position = Vector2(3771, -152)
+texture = ExtResource("9_jwlxq")
+
+[node name="DeadPlayerLyingTurret3" type="Sprite2D" parent="."]
+position = Vector2(3945, -200)
+texture = ExtResource("8_2eyen")
+
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Corpses" type="Node2D" parent="."]
@@ -87,18 +101,15 @@ position = Vector2(391, 181)
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Heart" parent="Collectables" instance=ExtResource("6_swfaf")]
-position = Vector2(392, -48)
 
 [node name="Heart2" parent="Collectables" instance=ExtResource("6_swfaf")]
-position = Vector2(3632, -96)
 
 [node name="Heart3" parent="Collectables" instance=ExtResource("6_swfaf")]
-position = Vector2(4368, -176)
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_2tqlt")]
-position = Vector2(2448, 248)
+position = Vector2(8, -8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -205,6 +216,15 @@ position = Vector2(2944, -16)
 
 [node name="Spikes143" parent="." instance=ExtResource("13_hhncc")]
 position = Vector2(2864, -32)
+
+[node name="Spikes154" parent="." instance=ExtResource("13_hhncc")]
+position = Vector2(2736, -48)
+
+[node name="Spikes155" parent="." instance=ExtResource("13_hhncc")]
+position = Vector2(2768, -48)
+
+[node name="Spikes156" parent="." instance=ExtResource("13_hhncc")]
+position = Vector2(2656, 0)
 
 [node name="Spikes144" parent="." instance=ExtResource("13_hhncc")]
 position = Vector2(2880, -32)
@@ -456,12 +476,6 @@ position = Vector2(2224, 504)
 duration = 3
 offset = Vector2(60, 0)
 
-[node name="Long_Platform" parent="." instance=ExtResource("23_yns2h")]
-position = Vector2(2251, -67)
-
-[node name="Small_Platform" parent="." instance=ExtResource("24_4q8py")]
-position = Vector2(2123, -51)
-
 [node name="Small_Platform_Blocking" parent="." instance=ExtResource("25_p8vik")]
 position = Vector2(2408, 336)
 duration = 2
@@ -694,24 +708,6 @@ rotation = -7.85317
 position = Vector2(2352, 320)
 rotation = -4.71323
 
-[node name="DeadPlayerSittingSnow2" type="Sprite2D" parent="."]
-position = Vector2(2792, -152)
-texture = ExtResource("6_b7rsy")
-
 [node name="Heart" parent="." instance=ExtResource("6_swfaf")]
-position = Vector2(2808, -128)
 
 [node name="Heart2" parent="." instance=ExtResource("6_swfaf")]
-position = Vector2(2336, 512)
-
-[node name="DeadPlayerLyingTurret2" type="Sprite2D" parent="."]
-position = Vector2(3303, -104)
-texture = ExtResource("8_2eyen")
-
-[node name="DeadPlayerSittingAlt2" type="Sprite2D" parent="."]
-position = Vector2(3771, -152)
-texture = ExtResource("9_jwlxq")
-
-[node name="DeadPlayerLyingTurret3" type="Sprite2D" parent="."]
-position = Vector2(3945, -200)
-texture = ExtResource("8_2eyen")

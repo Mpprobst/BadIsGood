@@ -61,10 +61,8 @@ position = Vector2(-331, -117)
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Heart" parent="Collectables" instance=ExtResource("7_wmipt")]
-position = Vector2(135, 53)
 
 [node name="Heart2" parent="Collectables" instance=ExtResource("7_wmipt")]
-position = Vector2(297, -175)
 
 [node name="Enemies" type="Node2D" parent="."]
 

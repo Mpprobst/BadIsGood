@@ -355,7 +355,6 @@ position = Vector2(197, -165)
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Heart" parent="Collectables" instance=ExtResource("9_bomam")]
-position = Vector2(639, -12)
 
 [node name="Enemies" type="Node2D" parent="."]
 

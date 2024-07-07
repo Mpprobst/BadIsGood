@@ -1,18 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp1jnmcbe0ec6"]
+[gd_scene load_steps=4 format=3 uid="uid://cp1jnmcbe0ec6"]
 
-[ext_resource type="TileSet" uid="uid://clqdlyyvioo0a" path="res://scifi_tile_set.tres" id="4_a0o7t"]
 [ext_resource type="PackedScene" uid="uid://blht3k8hivpxt" path="res://Scenes/Prefabs/Platforms_Facility/meduim_platform.tscn" id="5_h4stq"]
-[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_mpobb"]
-[ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="7_hwj28"]
 [ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="7_ix62k"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="8_8f7lv"]
 
 [node name="Level2" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("4_a0o7t")
-format = 2
-layer_0/tile_data = PackedInt32Array(65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 131070, 65536, 1, 131071, 65536, 1, 65536, 65536, 1, 65537, 65536, 1, 196606, 65536, 1, 131069, 0, 1, 196605, 0, 1, 196607, 65536, 1, 131072, 65536, 1, 3, 65536, 0, 131073, 65536, 1, 131074, 65536, 1, 131075, 65536, 1, 65539, 65536, 1, 65538, 65536, 1, 65533, 0, 0, -262147, 0, 2, -262146, 65536, 2, -262145, 65536, 2, -327680, 65536, 2, -327679, 65536, 2, -327678, 65536, 2, -327677, 65536, 2, -327676, 65536, 2, -327675, 65536, 2, -327674, 65536, 2, -327673, 65536, 2, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, -327672, 131072, 2, 8, 65536, 0, -524279, 65536, 2, 9, 65536, 0, -524278, 65536, 2, 10, 65536, 0, -524277, 65536, 2, 11, 65536, 0, -524276, 65536, 2, 12, 65536, 0, -524275, 65536, 2, 13, 65536, 0, -524274, 65536, 2, 14, 65536, 0, -524273, 65536, 2, 15, 65536, 1, -524272, 65536, 2, -262128, 65536, 0, -196592, 65536, 1, -131056, 65536, 1, -65520, 65536, 1, 16, 65536, 1, -524271, 65536, 2, -262127, 65536, 0, -196591, 65536, 1, -131055, 65536, 1, -65519, 65536, 1, 17, 65536, 1, -524270, 65536, 2, -262126, 65536, 0, -196590, 65536, 1, -131054, 65536, 1, -65518, 65536, 1, 18, 65536, 1, -524280, 65536, 1, -458744, 131072, 1, -393208, 131072, 1, -262129, 0, 0, -196593, 0, 1, -131057, 0, 1, -65521, 0, 1)
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -28,12 +20,6 @@ position = Vector2(391, 181)
 
 [node name="Collectables" type="Node2D" parent="."]
 
-[node name="Heart" parent="Collectables" instance=ExtResource("6_mpobb")]
-position = Vector2(96, -9)
-
-[node name="Heart2" parent="Collectables" instance=ExtResource("6_mpobb")]
-position = Vector2(272, -73)
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Gun Turret" parent="Enemies" instance=ExtResource("7_ix62k")]
@@ -46,9 +32,6 @@ fire_rate = 3.0
 position = Vector2(227, -10)
 range = 100.0
 fire_rate = 2.0
-
-[node name="Player" parent="." instance=ExtResource("7_hwj28")]
-position = Vector2(0, -2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
