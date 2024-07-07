@@ -15,12 +15,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Game Complete"
+text = "You found the secrets to the facility.
+And then you die."
 horizontal_alignment = 1
 
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(104, 16)
 layout_mode = 2
-text = "Return to main menu"
+text = "Repeat the cycle?"
 
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

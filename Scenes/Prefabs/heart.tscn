@@ -58,6 +58,22 @@ tracks/3/keys = {
 "values": [Vector2(0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_dykfd"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3)]
+}
+
 [sub_resource type="Animation" id="Animation_v4bbd"]
 resource_name = "pickup"
 tracks/0/type = "value"
@@ -111,22 +127,6 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_dykfd"]
-resource_name = "idle"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -3)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_128xf"]
 _data = {
 "RESET": SubResource("Animation_srxyf"),
@@ -154,6 +154,7 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_y6ube")
 volume_db = -8.353
+max_distance = 100.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
