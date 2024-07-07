@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfc12ri7ijihc"]
+[gd_scene load_steps=7 format=3 uid="uid://bfc12ri7ijihc"]
 
 [ext_resource type="Texture2D" uid="uid://couryfvmok37r" path="res://Sprites/Snow.png" id="4_31ejl"]
 [ext_resource type="PackedScene" uid="uid://cvh66y1eevsar" path="res://Scenes/Prefabs/spikes.tscn" id="5_whcwx"]
-[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_qjih7"]
 [ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="7_8qcce"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="8_jk02w"]
 
@@ -231,9 +230,6 @@ position = Vector2(-322, -84)
 rotation = -1.5708
 
 [node name="Collectables" type="Node2D" parent="."]
-
-[node name="Heart" parent="Collectables" instance=ExtResource("6_qjih7")]
-position = Vector2(103, 212)
 
 [node name="Enemies" type="Node2D" parent="."]
 

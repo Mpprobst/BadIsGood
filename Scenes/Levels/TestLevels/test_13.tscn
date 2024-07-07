@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbi7o18njxc48"]
+[gd_scene load_steps=6 format=3 uid="uid://dbi7o18njxc48"]
 
 [ext_resource type="TileSet" uid="uid://clqdlyyvioo0a" path="res://scifi_tile_set.tres" id="4_0ua51"]
 [ext_resource type="PackedScene" uid="uid://blht3k8hivpxt" path="res://Scenes/Prefabs/Platforms_Facility/meduim_platform.tscn" id="5_4o0fw"]
 [ext_resource type="PackedScene" uid="uid://gcrgkdq8ydny" path="res://Scenes/Prefabs/spikes_scifi.tscn" id="6_lek1h"]
-[ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="6_yj38c"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="8_d7u62"]
 [ext_resource type="PackedScene" uid="uid://dh8iq64g1akol" path="res://Scenes/Prefabs/gun_turret.tscn" id="8_kfyhi"]
 
@@ -130,8 +129,6 @@ position = Vector2(9, -213)
 rotation = 3.14159
 
 [node name="Collectables" type="Node2D" parent="."]
-
-[node name="Heart" parent="Collectables" instance=ExtResource("6_yj38c")]
 
 [node name="Enemies" type="Node2D" parent="."]
 
