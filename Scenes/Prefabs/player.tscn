@@ -127,13 +127,14 @@ position = Vector2(0, -7.75)
 shape = SubResource("RectangleShape2D_6da6y")
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+volume_db = -8.0
 
 [node name="ReusableAudio" type="AudioStreamPlayer2D" parent="."]
 volume_db = 3.0
 
 [node name="Breathing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_q5twp")
-volume_db = -10.0
+volume_db = -20.0
 bus = &"SFX"
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]

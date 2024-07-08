@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/BadGame.gd" id="1_lrkof"]
 [ext_resource type="PackedScene" uid="uid://b1ycb50vkkwio" path="res://Scenes/Prefabs/player.tscn" id="2_beope"]
 [ext_resource type="PackedScene" uid="uid://duek3shok5gp8" path="res://Scenes/UI/victory_screen.tscn" id="2_otxhu"]
-[ext_resource type="Resource" path="res://Resources/facility_sfx.tres" id="3_32e4o"]
+[ext_resource type="Resource" uid="uid://c3gh2oe10npaw" path="res://Resources/facility_sfx.tres" id="3_32e4o"]
 [ext_resource type="PackedScene" uid="uid://d0fnucn80w50q" path="res://Scenes/Prefabs/corpse.tscn" id="3_y8ptl"]
 [ext_resource type="PackedScene" uid="uid://ni4p8bwlvxqe" path="res://Scenes/Prefabs/heart.tscn" id="4_bhnji"]
 [ext_resource type="PackedScene" uid="uid://dk103rojifmnt" path="res://Scenes/UI/level_completed.tscn" id="5_4lb2a"]
@@ -35,17 +35,25 @@ z_index = 1
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_beope")]
-position = Vector2(-1024, 136)
+position = Vector2(-1024, 142)
 
 [node name="Heart5" parent="." instance=ExtResource("4_bhnji")]
+position = Vector2(-304, 49)
 
 [node name="Heart6" parent="." instance=ExtResource("4_bhnji")]
+position = Vector2(-921, 96)
 
 [node name="Heart9" parent="." instance=ExtResource("4_bhnji")]
+position = Vector2(829, 3)
 
 [node name="Heart7" parent="." instance=ExtResource("4_bhnji")]
+position = Vector2(1351, -214)
 
 [node name="Heart8" parent="." instance=ExtResource("4_bhnji")]
+position = Vector2(1334, -186)
+
+[node name="Heart10" parent="." instance=ExtResource("4_bhnji")]
+position = Vector2(1367, -187)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

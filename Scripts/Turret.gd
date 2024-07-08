@@ -60,7 +60,8 @@ func fire():
 	var projectile : Projectile = projectile_scene.instantiate()
 	add_child(projectile)
 	var launch_pos = global_position + shot_offset
-	var target_pos = target.global_position + target_offset
+	var lookahead = 0.25
+	var target_pos = target.global_position + target_offset + target.velocity * Vector2(lookahead,lookahead)
 	
 	print("pos %s" % global_position)
 	print("offset %s" % launch_pos)

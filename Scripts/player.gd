@@ -97,8 +97,8 @@ func _physics_process(delta):
 	# probably could get this elsewhere, but this is safe
 	if is_on_floor() and not grounded:
 		var game : Game = get_tree().get_root().get_node("Level")
-		reusable_audio.stream = game.level_sfx.get_rand_footstep()
-		reusable_audio.play()
+		footsteps.stream = game.level_sfx.get_rand_footstep()
+		footsteps.play()
 		grounded = true
 	elif not is_on_floor() and grounded:
 		grounded = false

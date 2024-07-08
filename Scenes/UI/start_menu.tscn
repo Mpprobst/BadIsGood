@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvcrf24afx50f"]
+[gd_scene load_steps=5 format=3 uid="uid://dvcrf24afx50f"]
 
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_rewg2"]
 [ext_resource type="PackedScene" uid="uid://45xq5fuh4h5j" path="res://Scenes/Prefabs/Ship.tscn" id="2_4mb0y"]
 [ext_resource type="AudioStream" uid="uid://sbg3xdemgobe" path="res://SFX/Impacts/ship_crash.mp3" id="2_d1ti1"]
+[ext_resource type="AudioStream" uid="uid://dwcd42yxflv18" path="res://Audio library/30_Second-2020-10-27_-_Stasis_-_www.FesliyanStudios.com_Steve_Oxen.mp3" id="4_nc57t"]
 
 [node name="StartMenu" type="CenterContainer"]
 anchors_preset = 15
@@ -33,10 +34,16 @@ custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 text = "Quit"
 
-[node name="Crash" type="AudioStreamPlayer2D" parent="."]
+[node name="Crash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_d1ti1")
 volume_db = 5.0
 bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nc57t")
+volume_db = -2.5
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -29,6 +29,10 @@ offset = Vector2(0, 0)
 position = Vector2(65, -127)
 offset = Vector2(0, 0)
 
+[node name="Medium_Platform8" parent="Platforms" instance=ExtResource("5_uidgx")]
+position = Vector2(100, -127)
+offset = Vector2(0, 0)
+
 [node name="Medium_Platform7" parent="Platforms" instance=ExtResource("5_uidgx")]
 position = Vector2(65, -186)
 offset = Vector2(0, 0)
@@ -63,6 +67,13 @@ position = Vector2(153, -6)
 scale = Vector2(1, -1)
 range = 90.0
 fire_rate = 0.75
+
+[node name="Gun Turret4" parent="Enemies" instance=ExtResource("8_8c6lo")]
+position = Vector2(183, -144)
+rotation = 1.5708
+scale = Vector2(1, -1)
+range = 150.0
+fire_rate = 1.5
 
 [node name="Gun Turret3" parent="Enemies" instance=ExtResource("8_8c6lo")]
 position = Vector2(58, -169)

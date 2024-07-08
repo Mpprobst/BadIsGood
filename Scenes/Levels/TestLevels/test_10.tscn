@@ -25,13 +25,13 @@ position = Vector2(391, 181)
 [node name="Gun Turret" parent="Enemies" instance=ExtResource("7_ix62k")]
 position = Vector2(96, -54)
 scale = Vector2(-1, -1)
-range = 100.0
-fire_rate = 3.0
+range = 120.0
+fire_rate = 2.5
 
 [node name="Gun Turret2" parent="Enemies" instance=ExtResource("7_ix62k")]
 position = Vector2(227, -10)
-range = 100.0
-fire_rate = 2.0
+range = 150.0
+fire_rate = 1.75
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
